@@ -80,7 +80,7 @@ def main():
         </style>
     """, unsafe_allow_html=True)
 
-    st.title("🕉️ Bhagavad Gita Wisdom with Srikrishna")
+    st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
     
     # Initialize session and state
     initialize_session_state()
