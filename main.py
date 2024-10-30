@@ -32,7 +32,8 @@ def main():
         response = response_generator.generate_response(
             user_question, 
             relevant_verses,
-            st.session_state.context
+            st.session_state.context,
+            st.session_state.conversation  # Pass the conversation history
         )
         
         # Add to conversation history
@@ -42,11 +43,13 @@ def main():
         })
         st.session_state.context.append(relevant_verses)
         
-        # Display conversation
-        for conv in st.session_state.conversation:
-            st.text_area("You asked:", conv["question"], height=50, disabled=True)
-            st.markdown(f"**Krishna says:**\n{conv['answer']}")
-            st.markdown("---")
-            
+        # Display conversation history with timestamps
+        st.subheader("Our Conversation")
+        for idx, conv in enumerate(st.session_state.conversation):
+            with st.container():
+                st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
+                st.markdown(f"**Krishna says:**\n{conv['answer']}", key=f"a_{idx}")
+                st.markdown("---")
+
 if __name__ == "__main__":
     main()
