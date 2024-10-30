@@ -94,11 +94,9 @@ class ResponseGenerator:
             
             Use a tone that reflects divine knowledge, compassion, and unconditional love.
             
-            Format your response as JSON with two fields:
-            {
-                "short_answer": "Your concise response here",
-                "detailed_explanation": "Your detailed response here"
-            }"""
+            Format your response in two clear sections, separated by two newlines:
+            1. First section: Short answer
+            2. Second section: Detailed explanation"""
             
             conversation_history = self.format_conversation_history(conversation)
             verses_context = self.format_verses_context(relevant_verses)
@@ -119,14 +117,24 @@ Please provide both a concise answer and detailed explanation using the verses a
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=0.7,
-                    max_tokens=1000,
-                    response_format={"type": "json_object"}
+                    max_tokens=1000
                 )
                 
                 if not response or not response.choices:
                     raise ValueError("Empty response from OpenAI API")
                 
-                response_data = json.loads(response.choices[0].message.content)
+                response_text = response.choices[0].message.content
+                
+                # Try to parse as JSON first
+                try:
+                    response_data = json.loads(response_text)
+                except json.JSONDecodeError:
+                    # If not JSON, split by double newlines
+                    parts = response_text.split('\n\n')
+                    response_data = {
+                        "short_answer": parts[0],
+                        "detailed_explanation": '\n\n'.join(parts[1:])
+                    }
                 
                 response_time = time.time() - start_time
                 monitor.log_response_metrics(session_id, response_time, True)
