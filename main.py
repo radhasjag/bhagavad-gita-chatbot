@@ -22,7 +22,64 @@ def process_question(question, gita_processor, response_generator, context, conv
         conversation
     )
 
+def format_metric_value(value):
+    """Format metric values to be more readable"""
+    if isinstance(value, float):
+        if value < 0.01:  # For very small numbers
+            return f"{value:.4f}"
+        return f"{value:.2f}"
+    elif isinstance(value, int):
+        return f"{value:,}"  # Add thousands separator
+    return str(value)
+
 def main():
+    # Custom CSS for sidebar styling
+    st.markdown("""
+        <style>
+        [data-testid="stSidebar"] {
+            background-color: #FFF3E0;
+            padding: 2rem 1rem;
+        }
+        .metric-container {
+            background-color: white;
+            padding: 1.5rem;
+            margin: 1.2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #FF9933;
+        }
+        .metric-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .metric-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #FF9933;
+            padding-left: 1.5rem;
+        }
+        .health-status {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            background-color: white;
+            border-left: 4px solid #28a745;
+        }
+        .status-healthy {
+            color: #28a745;
+        }
+        .status-degraded {
+            color: #ffc107;
+            border-left-color: #ffc107;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
     st.title("🕉️ Bhagavad Gita Wisdom with Srikrishna")
     
     # Initialize session and state
@@ -32,6 +89,48 @@ def main():
     # Initialize processors
     gita_processor = GitaProcessor()
     response_generator = ResponseGenerator()
+
+    # Sidebar Metrics Display
+    st.sidebar.markdown("## System Metrics Dashboard")
+    metrics = monitor.get_metrics()
+    
+    # Metrics with simple text-based icons
+    metric_icons = {
+        'total_interactions': '[>]',
+        'successful_responses': '[+]',
+        'failed_responses': '[!]',
+        'avg_response_time': '[~]',
+        'active_sessions': '[*]',
+    }
+    
+    for metric, value in metrics.items():
+        icon = metric_icons.get(metric, '[#]')
+        formatted_value = format_metric_value(value)
+        metric_name = metric.replace('_', ' ').title()
+        
+        st.sidebar.markdown(f"""
+            <div class="metric-container">
+                <div class="metric-title">{icon} {metric_name}</div>
+                <div class="metric-value">{formatted_value}</div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    # Health Status Display
+    health_status = get_health_status()
+    st.sidebar.markdown("### System Health Status")
+    status_class = "status-healthy" if health_status["status"] == "healthy" else "status-degraded"
+    status_icon = "[OK]" if health_status["status"] == "healthy" else "[!!]"
+    
+    st.sidebar.markdown(f"""
+        <div class="health-status {status_class}">
+            <div class="metric-title">
+                {status_icon} Status: {health_status["status"].title()}
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    with st.sidebar.expander("View Health Details"):
+        st.json(health_status)
     
     # Add a spiritual background description
     st.markdown("""
@@ -89,19 +188,6 @@ def main():
         except Exception as e:
             monitor.log_error(session_id, e, {"context": "main_execution"})
             st.error("Forgive me, dear one. I am unable to provide guidance at this moment. Please try again.")
-    
-    # Health check endpoint (accessed via sidebar)
-    if st.sidebar.checkbox("Show System Health"):
-        health_status = get_health_status()
-        st.sidebar.subheader("System Health")
-        st.sidebar.json(health_status)
-    
-    # Display monitoring metrics in sidebar
-    if st.sidebar.checkbox("Show Monitoring Metrics"):
-        metrics = monitor.get_metrics()
-        st.sidebar.subheader("System Metrics")
-        for metric, value in metrics.items():
-            st.sidebar.metric(label=metric.replace('_', ' ').title(), value=value)
 
 if __name__ == "__main__":
     main()
