@@ -2,9 +2,16 @@
 headless = true
 address = "0.0.0.0"
 port = 5000
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 5
 
 [theme]
 primaryColor = "#FF9933"
 backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#FFF3E0"
 textColor = "#262730"
+
+[logger]
+level = "INFO"
+messageFormat = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

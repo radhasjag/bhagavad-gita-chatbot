@@ -22,3 +22,7 @@
   }
 }
 2024-10-30 21:07:56,918 - GitaChatbot - INFO - Performance metric - total_response_time: 0.18932509422302246, Context: {"question_length": 73}
+2024-10-30 21:18:19,430 - GitaChatbot - INFO - New interaction - Session: -9221957604134191729, Question: How would we know that we are progressing in the spiritual path? 
+2024-10-30 21:18:19,431 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-30 21:18:37,577 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-30 21:18:37,583 - GitaChatbot - INFO - Performance metric - total_response_time: 18.15587091445923, Context: {"question_length": 65}
