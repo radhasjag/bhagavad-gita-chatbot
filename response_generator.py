@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI, APIError, APIConnectionError, RateLimitError
 import streamlit as st
+from utils.monitoring import monitor
 
 class ResponseGenerator:
     def __init__(self):
@@ -24,21 +25,21 @@ class ResponseGenerator:
             formatted_history = "\nPrevious conversation:\n"
             for conv in conversation[-3:]:  # Only include last 3 conversations for context
                 formatted_history += f"Seeker: {conv['question']}\n"
-                formatted_history += f"Krishna: {conv['answer']}\n"
-            print(f"Conversation history formatted successfully, length: {len(formatted_history)}")
+                formatted_history += f"Krishna: {conv['short_answer']}\n"
+            monitor.log_performance_metric("conversation_history_length", len(formatted_history), {"type": "formatting"})
             return formatted_history
         except Exception as e:
-            print(f"Error formatting conversation history: {str(e)}")
+            monitor.log_error("system", e, {"context": "format_conversation_history"})
             return ""
 
     def format_verses_context(self, relevant_verses):
         """Format the relevant verses for the prompt."""
         try:
             if relevant_verses is None or relevant_verses.empty:
-                print("Warning: No relevant verses found")
+                monitor.log_performance_metric("verses_found", 0, {"type": "verse_processing"})
                 return "No specific verses found for this query."
             
-            print(f"Number of relevant verses found: {len(relevant_verses)}")
+            monitor.log_performance_metric("verses_found", len(relevant_verses), {"type": "verse_processing"})
             formatted_verses = []
             for _, verse in relevant_verses.iterrows():
                 try:
@@ -50,49 +51,53 @@ class ResponseGenerator:
                     )
                     formatted_verses.append(formatted_verse)
                 except KeyError as ke:
-                    print(f"Error: Missing required column in verse data: {ke}")
+                    monitor.log_error("system", ke, {"context": "verse_formatting"})
                     continue
                 
             verses_text = "\n\n".join(formatted_verses)
-            print(f"Verses context formatted successfully, length: {len(verses_text)}")
             return verses_text
         except Exception as e:
-            print(f"Error formatting verses context: {str(e)}")
+            monitor.log_error("system", e, {"context": "format_verses_context"})
             return "Error processing verses."
 
     def generate_response(self, question, relevant_verses, context, conversation=[]):
-        """Generate a response in Krishna's voice using OpenAI with conversation history."""
+        """Generate both concise and detailed responses in Krishna's voice using OpenAI."""
         try:
-            # Verify client initialization
+            start_time = time.time()
+            session_id = str(hash(question))
+            monitor.log_interaction(session_id, question)
+
             if self.client is None:
                 raise ValueError("OpenAI client not properly initialized")
             
-            # Verify inputs
             if not question or not isinstance(question, str):
                 raise ValueError("Invalid question format")
             
-            print(f"Processing question: {question}")
-            
-            # Create the system prompt with enhanced verse reference instructions
             system_prompt = """You are Lord Krishna speaking to a seeker of wisdom through the teachings of Bhagavad Gita. 
-            Follow these guidelines for your response:
-            1. Begin with a direct answer to the seeker's question
-            2. Support your answer with specific verse references using the format (BG chapter.verse)
-            3. Explain how each verse applies to the seeker's situation
-            4. Connect your current answer with previous discussions when relevant
-            5. End with a practical application or specific guidance
+            Provide two types of responses:
             
-            Use a tone that reflects divine knowledge, compassion, and unconditional love."""
+            1. A SHORT ANSWER (2-3 sentences):
+            - Direct answer to the question
+            - Essential wisdom without verse references
+            - Clear, practical guidance
             
-            # Format conversation history
+            2. A DETAILED EXPLANATION:
+            - Elaborate on the short answer
+            - Include relevant verse references (BG chapter.verse)
+            - Explain how verses apply to the situation
+            - Connect with previous discussions
+            - Provide practical applications
+            
+            Use a tone that reflects divine knowledge, compassion, and unconditional love.
+            
+            Format your response as JSON with two fields:
+            {
+                "short_answer": "Your concise response here",
+                "detailed_explanation": "Your detailed response here"
+            }"""
+            
             conversation_history = self.format_conversation_history(conversation)
-            if conversation_history:
-                print("Conversation history validation passed")
-            
-            # Format verses context
             verses_context = self.format_verses_context(relevant_verses)
-            if verses_context == "Error processing verses.":
-                raise ValueError("Failed to process verses context")
             
             user_prompt = f"""Question: {question}
 
@@ -100,13 +105,8 @@ Relevant verses from Bhagavad Gita:
 {verses_context}
 {conversation_history}
 
-Please provide guidance using the specific verses given above, and ensure to reference them in your response using the format (BG chapter.verse). Make the connection between the verses and the seeker's question clear and practical."""
+Please provide both a concise answer and detailed explanation using the verses above."""
 
-            # Print debug information
-            print(f"Total prompt length: {len(system_prompt) + len(user_prompt)}")
-            print("Preparing to send request to OpenAI API...")
-            
-            # Make the API call
             try:
                 response = self.client.chat.completions.create(
                     model="gpt-4",
@@ -115,36 +115,32 @@ Please provide guidance using the specific verses given above, and ensure to ref
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=0.7,
-                    max_tokens=750  # Increased to accommodate verse references
+                    max_tokens=1000,
+                    response_format={"type": "json_object"}
                 )
-                print("OpenAI API request completed successfully")
                 
                 if not response or not response.choices:
                     raise ValueError("Empty response from OpenAI API")
                 
-                # Format the response to highlight verse references
-                answer = response.choices[0].message.content
+                response_data = json.loads(response.choices[0].message.content)
                 
-                # Add a clear separator for verse references if they exist
-                if any(f"BG {i}" in answer for i in range(1, 19)):
-                    answer += "\n\n---\n*References from Bhagavad Gita are indicated as (BG chapter.verse)*"
+                response_time = time.time() - start_time
+                monitor.log_response_metrics(session_id, response_time, True)
                 
-                return answer
+                return response_data
                 
-            except RateLimitError as rle:
-                print(f"OpenAI API rate limit exceeded: {str(rle)}")
-                return "Forgive me, dear one. I need a moment to contemplate. Please try again shortly."
-            except APIConnectionError as ace:
-                print(f"OpenAI API connection error: {str(ace)}")
-                return "Forgive me, but I am unable to connect with the divine wisdom at this moment. Please try again."
-            except APIError as ae:
-                print(f"OpenAI API error: {str(ae)}")
-                return "Forgive me, there seems to be a disturbance in our connection. Please ask your question again."
+            except (RateLimitError, APIConnectionError, APIError) as api_error:
+                monitor.log_error(session_id, api_error, {"context": "api_call"})
+                error_response = {
+                    "short_answer": "Forgive me, dear one. I need a moment to contemplate. Please try again shortly.",
+                    "detailed_explanation": str(api_error)
+                }
+                return error_response
                 
-        except ValueError as ve:
-            print(f"Validation Error: {str(ve)}")
-            return "Forgive me, dear one, but I need a clear question to provide guidance."
         except Exception as e:
-            print(f"Error generating response: {str(e)}")
-            print(f"Error type: {type(e).__name__}")
-            return "Forgive me, dear one, but I am unable to provide guidance at this moment. Please ask your question again."
+            monitor.log_error(session_id, e, {"context": "generate_response"})
+            error_response = {
+                "short_answer": "Forgive me, dear one, but I am unable to provide guidance at this moment.",
+                "detailed_explanation": f"Technical error: {str(e)}"
+            }
+            return error_response
