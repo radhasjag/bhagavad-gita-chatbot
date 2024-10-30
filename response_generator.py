@@ -1,15 +1,18 @@
 import os
-from openai import OpenAI
-from openai.types.error import APIError, APIConnectionError, RateLimitError
+from openai import OpenAI, APIError, APIConnectionError, RateLimitError
 
 class ResponseGenerator:
     def __init__(self):
-        self.api_key = os.environ.get("OPENAI_API_KEY")
-        if not self.api_key:
-            print("Warning: OpenAI API key is missing!")
-        else:
+        try:
+            self.api_key = os.environ.get("OPENAI_API_KEY")
+            if not self.api_key:
+                print("Warning: OpenAI API key is missing!")
+                raise ValueError("OpenAI API key is not set in environment")
             print("OpenAI API key is set")
-        self.client = OpenAI(api_key=self.api_key)
+            self.client = OpenAI(api_key=self.api_key)
+        except Exception as e:
+            print(f"Error initializing OpenAI client: {str(e)}")
+            self.client = None
         
     def format_conversation_history(self, conversation):
         """Format the conversation history for the prompt."""
@@ -54,9 +57,9 @@ class ResponseGenerator:
     def generate_response(self, question, relevant_verses, context, conversation=[]):
         """Generate a response in Krishna's voice using OpenAI with conversation history."""
         try:
-            # Verify API key
-            if not self.api_key:
-                raise ValueError("OpenAI API key is missing")
+            # Verify client initialization
+            if self.client is None:
+                raise ValueError("OpenAI client not properly initialized")
             
             # Verify inputs
             if not question or not isinstance(question, str):
