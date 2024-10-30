@@ -1,4 +1,6 @@
 import os
+import time
+import json
 from openai import OpenAI, APIError, APIConnectionError, RateLimitError
 import streamlit as st
 from utils.monitoring import monitor
@@ -62,9 +64,11 @@ class ResponseGenerator:
 
     def generate_response(self, question, relevant_verses, context, conversation=[]):
         """Generate both concise and detailed responses in Krishna's voice using OpenAI."""
+        # Initialize session_id before try block
+        session_id = str(hash(question))
+        
         try:
             start_time = time.time()
-            session_id = str(hash(question))
             monitor.log_interaction(session_id, question)
 
             if self.client is None:

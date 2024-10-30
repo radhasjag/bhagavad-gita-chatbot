@@ -1,0 +1,10 @@
+2024-10-30 21:04:57,924 - GitaChatbot - ERROR - Error occurred: {
+  "timestamp": "2024-10-30T21:04:57.924015",
+  "session_id": "system",
+  "error_type": "UnboundLocalError",
+  "error_message": "cannot access local variable 'session_id' where it is not associated with a value",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/SrikrishnaBot/response_generator.py\", line 66, in generate_response\n    start_time = time.time()\n                 ^^^^\nNameError: name 'time' is not defined\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/runner/SrikrishnaBot/main.py\", line 37, in main\n    response_data = response_generator.generate_response(\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/SrikrishnaBot/response_generator.py\", line 141, in generate_response\n    monitor.log_error(session_id, e, {\"context\": \"generate_response\"})\n                      ^^^^^^^^^^\nUnboundLocalError: cannot access local variable 'session_id' where it is not associated with a value\n",
+  "context": {
+    "context": "main_execution"
+  }
+}
