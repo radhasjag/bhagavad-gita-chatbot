@@ -26,3 +26,8 @@
 2024-10-30 21:18:19,431 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
 2024-10-30 21:18:37,577 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-30 21:18:37,583 - GitaChatbot - INFO - Performance metric - total_response_time: 18.15587091445923, Context: {"question_length": 65}
+2024-10-30 21:30:50,239 - GitaChatbot - INFO - New interaction - Session: 1323101747338620538, Question: How is this universe built and what is the purpose of creation? 
+2024-10-30 21:30:50,239 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-30 21:31:10,518 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-30 21:31:10,523 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-30 21:31:10,525 - GitaChatbot - INFO - Performance metric - total_response_time: 20.29078984260559, Context: {"question_length": 64, "session_id": "2281134785644635474"}
