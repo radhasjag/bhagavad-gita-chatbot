@@ -27,29 +27,34 @@ def main():
     user_question = st.text_input("What wisdom do you seek?", key="user_input")
     
     if user_question:
-        # Process the question and generate response
-        relevant_verses = gita_processor.find_relevant_verses(user_question)
-        response = response_generator.generate_response(
-            user_question, 
-            relevant_verses,
-            st.session_state.context,
-            st.session_state.conversation  # Pass the conversation history
-        )
+        try:
+            # Process the question and generate response
+            relevant_verses = gita_processor.find_relevant_verses(user_question)
+            response = response_generator.generate_response(
+                user_question, 
+                relevant_verses,
+                st.session_state.context,
+                st.session_state.conversation  # Pass the conversation history
+            )
+            
+            # Add to conversation history
+            st.session_state.conversation.append({
+                "question": user_question,
+                "answer": response
+            })
+            st.session_state.context.append(relevant_verses)
+            
+            # Display conversation history
+            st.subheader("Our Conversation")
+            for idx, conv in enumerate(st.session_state.conversation):
+                with st.container():
+                    st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
+                    st.markdown(f"**Krishna says:**\n{conv['answer']}")
+                    st.markdown("---")
         
-        # Add to conversation history
-        st.session_state.conversation.append({
-            "question": user_question,
-            "answer": response
-        })
-        st.session_state.context.append(relevant_verses)
-        
-        # Display conversation history with timestamps
-        st.subheader("Our Conversation")
-        for idx, conv in enumerate(st.session_state.conversation):
-            with st.container():
-                st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
-                st.markdown(f"**Krishna says:**\n{conv['answer']}", key=f"a_{idx}")
-                st.markdown("---")
+        except Exception as e:
+            st.error("Forgive me, dear one. I am unable to provide guidance at this moment. Please try again.")
+            print(f"Error: {str(e)}")  # For debugging purposes
 
 if __name__ == "__main__":
     main()
