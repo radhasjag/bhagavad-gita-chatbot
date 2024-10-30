@@ -1,5 +1,6 @@
 import os
 from openai import OpenAI, APIError, APIConnectionError, RateLimitError
+import streamlit as st
 
 class ResponseGenerator:
     def __init__(self):
@@ -41,13 +42,18 @@ class ResponseGenerator:
             formatted_verses = []
             for _, verse in relevant_verses.iterrows():
                 try:
-                    formatted_verse = f"Chapter {verse['chapter']}, Verse {verse['verse_number']}: {verse['verse_text']}\nMeaning: {verse['meaning']}"
+                    formatted_verse = (
+                        f"Chapter {verse['chapter']}, Verse {verse['verse_number']}:\n"
+                        f"Sanskrit: {verse['verse_text']}\n"
+                        f"Meaning: {verse['meaning']}\n"
+                        f"Reference: BG {verse['chapter']}.{verse['verse_number']}"
+                    )
                     formatted_verses.append(formatted_verse)
                 except KeyError as ke:
                     print(f"Error: Missing required column in verse data: {ke}")
                     continue
                 
-            verses_text = "\n".join(formatted_verses)
+            verses_text = "\n\n".join(formatted_verses)
             print(f"Verses context formatted successfully, length: {len(verses_text)}")
             return verses_text
         except Exception as e:
@@ -67,12 +73,16 @@ class ResponseGenerator:
             
             print(f"Processing question: {question}")
             
-            # Create the system prompt
+            # Create the system prompt with enhanced verse reference instructions
             system_prompt = """You are Lord Krishna speaking to a seeker of wisdom through the teachings of Bhagavad Gita. 
-            Respond with deep spiritual wisdom, compassion, and authority, using a tone that reflects divine knowledge and unconditional love.
-            Consider the previous conversation context to maintain continuity and provide more personalized guidance.
-            Always reference the relevant verses from Bhagavad Gita to support your teachings, and connect your current answer 
-            with previous discussions when appropriate."""
+            Follow these guidelines for your response:
+            1. Begin with a direct answer to the seeker's question
+            2. Support your answer with specific verse references using the format (BG chapter.verse)
+            3. Explain how each verse applies to the seeker's situation
+            4. Connect your current answer with previous discussions when relevant
+            5. End with a practical application or specific guidance
+            
+            Use a tone that reflects divine knowledge, compassion, and unconditional love."""
             
             # Format conversation history
             conversation_history = self.format_conversation_history(conversation)
@@ -90,7 +100,7 @@ Relevant verses from Bhagavad Gita:
 {verses_context}
 {conversation_history}
 
-Please provide guidance while maintaining continuity with our previous discussion if any."""
+Please provide guidance using the specific verses given above, and ensure to reference them in your response using the format (BG chapter.verse). Make the connection between the verses and the seeker's question clear and practical."""
 
             # Print debug information
             print(f"Total prompt length: {len(system_prompt) + len(user_prompt)}")
@@ -105,14 +115,21 @@ Please provide guidance while maintaining continuity with our previous discussio
                         {"role": "user", "content": user_prompt}
                     ],
                     temperature=0.7,
-                    max_tokens=500
+                    max_tokens=750  # Increased to accommodate verse references
                 )
                 print("OpenAI API request completed successfully")
                 
                 if not response or not response.choices:
                     raise ValueError("Empty response from OpenAI API")
-                    
-                return response.choices[0].message.content
+                
+                # Format the response to highlight verse references
+                answer = response.choices[0].message.content
+                
+                # Add a clear separator for verse references if they exist
+                if any(f"BG {i}" in answer for i in range(1, 19)):
+                    answer += "\n\n---\n*References from Bhagavad Gita are indicated as (BG chapter.verse)*"
+                
+                return answer
                 
             except RateLimitError as rle:
                 print(f"OpenAI API rate limit exceeded: {str(rle)}")
