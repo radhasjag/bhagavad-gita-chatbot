@@ -148,26 +148,26 @@ def main():
     """)
     
     # Example container with custom styling
-    st.markdown("#### Examples of Follow-up Questions")
+    st.markdown("#### Examples of Questions")
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.info("""
-        **Initial Question:**
-        "What is dharma?"
+        **Getting Started:**
+        "What is the main message of Bhagavad Gita?"
         
         **Follow-up:**
-        "How can I apply this understanding in my daily life?"
+        "How can I apply these teachings in my daily life?"
         """)
     
     with col2:
         st.info("""
-        **Initial Question:**
+        **Deeper Understanding:**
         "What is the nature of the soul?"
         
         **Follow-up:**
-        "Can you elaborate more on its eternal nature?"
+        "How is the soul different from the body?"
         """)
     
     st.markdown("""
