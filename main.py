@@ -175,7 +175,19 @@ def main():
     Click "detailed explanation" to see the complete response with verse references.*
     """)
     
-    # User input
+    # Display conversation history before the input box
+    if st.session_state.conversation:
+        st.subheader("Our Conversation")
+        for idx, conv in enumerate(st.session_state.conversation):
+            with st.container():
+                st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
+                st.markdown(f"**Krishna's Wisdom:**\n{conv['short_answer']}")
+                
+                with st.expander("Click for detailed explanation with verses"):
+                    st.markdown(conv['detailed_explanation'])
+                st.markdown("---")
+    
+    # User input box now appears after the conversation history
     user_question = st.text_input("What wisdom do you seek?", key="user_input")
     
     if user_question:
@@ -203,17 +215,6 @@ def main():
                 "detailed_explanation": response_data["detailed_explanation"]
             })
             
-            # Display conversation history
-            st.subheader("Our Conversation")
-            for idx, conv in enumerate(st.session_state.conversation):
-                with st.container():
-                    st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
-                    st.markdown(f"**Krishna's Wisdom:**\n{conv['short_answer']}")
-                    
-                    with st.expander("Click for detailed explanation with verses"):
-                        st.markdown(conv['detailed_explanation'])
-                    st.markdown("---")
-            
             # Log performance metrics
             response_time = time.time() - start_time
             monitor.log_performance_metric(
@@ -221,6 +222,9 @@ def main():
                 response_time,
                 {"question_length": len(user_question), "session_id": session_id}
             )
+            
+            # Rerun to update the conversation display
+            st.experimental_rerun()
             
         except Exception as e:
             monitor.log_error(session_id, e, {"context": "main_execution"})

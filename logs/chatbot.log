@@ -57,3 +57,8 @@
 2024-10-30 21:54:15,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-30 21:54:15,596 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
 2024-10-30 21:54:15,599 - GitaChatbot - INFO - Performance metric - total_response_time: 14.510125398635864, Context: {"question_length": 94, "session_id": "1290312081297549302"}
+2024-10-31 20:37:10,405 - GitaChatbot - INFO - New interaction - Session: -4986427663527626026, Question: I am feeling lazy and I did not shower though it is a festival. Will I get punished for being lazy by karma?
+2024-10-31 20:37:10,455 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:37:28,046 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:37:28,050 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:37:28,052 - GitaChatbot - INFO - Performance metric - total_response_time: 17.651712894439697, Context: {"question_length": 108, "session_id": "2127314208430483971"}
