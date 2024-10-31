@@ -41,3 +41,19 @@
 2024-10-30 21:34:12,281 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
 2024-10-30 21:34:34,066 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-30 21:34:34,068 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-30 21:34:48,106 - GitaChatbot - INFO - New interaction - Session: 1323101747338620538, Question: How is this universe built and what is the purpose of creation? 
+2024-10-30 21:34:48,106 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-30 21:35:10,721 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-30 21:35:10,723 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-30 21:35:10,725 - GitaChatbot - INFO - Performance metric - total_response_time: 22.622313022613525, Context: {"question_length": 64, "session_id": "1767615026717435503"}
+2024-10-30 21:52:44,313 - GitaChatbot - INFO - New interaction - Session: 9195947557993240017, Question: If people are asking me for help but I know they are misusing my generosity and exploiting me. Should I teach them a lesson or patiently let them exploit because I should not do cruel deeds?
+2024-10-30 21:52:44,314 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-30 21:53:03,016 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-30 21:53:03,018 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-30 21:53:03,020 - GitaChatbot - INFO - Performance metric - total_response_time: 18.710888147354126, Context: {"question_length": 190, "session_id": "1290312081297549302"}
+2024-10-30 21:54:01,092 - GitaChatbot - INFO - New interaction - Session: -8791137533506498501, Question: It is causing my family distress. So should I stop helping those people who are exploiting me?
+2024-10-30 21:54:01,093 - GitaChatbot - INFO - Performance metric - conversation_history_length: 549, Context: {"type": "formatting"}
+2024-10-30 21:54:01,093 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-30 21:54:15,594 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-30 21:54:15,596 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-30 21:54:15,599 - GitaChatbot - INFO - Performance metric - total_response_time: 14.510125398635864, Context: {"question_length": 94, "session_id": "1290312081297549302"}
