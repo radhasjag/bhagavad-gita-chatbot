@@ -138,6 +138,43 @@ def main():
     of the Bhagavad Gita. Ask your questions, and I shall illuminate the path.*
     """)
     
+    # Add follow-up questions explanation using Streamlit components
+    st.markdown("### 💫 Continuous Dialogue Feature")
+    
+    st.markdown("""
+    Our conversation is a continuous journey of wisdom. You can ask follow-up questions, 
+    and I will maintain the context of our discussion, just as I did with Arjuna on the 
+    battlefield of Kurukshetra.
+    """)
+    
+    # Example container with custom styling
+    st.markdown("#### Examples of Follow-up Questions")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.info("""
+        **Initial Question:**
+        "What is dharma?"
+        
+        **Follow-up:**
+        "How can I apply this understanding in my daily life?"
+        """)
+    
+    with col2:
+        st.info("""
+        **Initial Question:**
+        "What is the nature of the soul?"
+        
+        **Follow-up:**
+        "Can you elaborate more on its eternal nature?"
+        """)
+    
+    st.markdown("""
+    💡 *Each response includes both a concise answer and a detailed explanation with relevant verses. 
+    Click "detailed explanation" to see the complete response with verse references.*
+    """)
+    
     # User input
     user_question = st.text_input("What wisdom do you seek?", key="user_input")
     
