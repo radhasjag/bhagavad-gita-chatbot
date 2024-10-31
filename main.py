@@ -205,7 +205,7 @@ def main():
                         st.markdown(conv['detailed_explanation'])
                     st.markdown("---")
         
-        # User input box below conversation history
+        # Move user input box below conversation history
         user_question = st.text_input("What wisdom do you seek?", key="user_input")
         
         if user_question:
@@ -242,6 +242,9 @@ def main():
                         response_time,
                         {"question_length": len(user_question), "session_id": session_id}
                     )
+                    
+                    # Clear the input box before rerunning
+                    st.session_state.user_input = ''
                     
                     # Rerun to update the conversation display
                     st.rerun()

@@ -256,3 +256,38 @@
     "context": "main_execution"
   }
 }
+2024-10-31 21:11:57,502 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:11:57,502 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:12:16,730 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:12:16,735 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:12:16,736 - GitaChatbot - INFO - Performance metric - total_response_time: 19.23789072036743, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:12:16,837 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:12:16,838 - GitaChatbot - INFO - Performance metric - conversation_history_length: 89, Context: {"type": "formatting"}
+2024-10-31 21:12:16,839 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:12:35,736 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:12:35,737 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:12:35,738 - GitaChatbot - INFO - Performance metric - total_response_time: 18.903807878494263, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:12:35,818 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:12:35,819 - GitaChatbot - INFO - Performance metric - conversation_history_length: 442, Context: {"type": "formatting"}
+2024-10-31 21:12:35,819 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:13:01,120 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:13:01,121 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:13:01,122 - GitaChatbot - INFO - Performance metric - total_response_time: 25.306339263916016, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:13:01,204 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:13:01,204 - GitaChatbot - INFO - Performance metric - conversation_history_length: 803, Context: {"type": "formatting"}
+2024-10-31 21:13:01,204 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:13:21,412 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:13:21,413 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:13:21,414 - GitaChatbot - INFO - Performance metric - total_response_time: 20.213052988052368, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:13:21,502 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:13:21,502 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1099, Context: {"type": "formatting"}
+2024-10-31 21:13:21,503 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:13:38,668 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:13:38,670 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:13:38,670 - GitaChatbot - INFO - Performance metric - total_response_time: 17.171510457992554, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:13:38,754 - GitaChatbot - INFO - New interaction - Session: -5832918685688675431, Question: What is my dharma as a mother?
+2024-10-31 21:13:38,755 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1070, Context: {"type": "formatting"}
+2024-10-31 21:13:38,755 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:13:56,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:13:56,445 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:13:56,445 - GitaChatbot - INFO - Performance metric - total_response_time: 17.696248292922974, Context: {"question_length": 30, "session_id": "2086394783691174212"}
