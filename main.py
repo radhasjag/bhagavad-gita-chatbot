@@ -223,7 +223,10 @@ def main():
                 {"question_length": len(user_question), "session_id": session_id}
             )
             
-            # Update rerun command to use st.rerun() instead of st.experimental_rerun()
+            # Clear the input box before rerunning
+            st.session_state.user_input = ''
+            
+            # Rerun to update the conversation display
             st.rerun()
             
         except Exception as e:

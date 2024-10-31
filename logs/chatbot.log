@@ -93,3 +93,149 @@
     "context": "main_execution"
   }
 }
+2024-10-31 20:44:06,571 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:44:06,572 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:44:25,381 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:44:25,383 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:44:25,383 - GitaChatbot - INFO - Performance metric - total_response_time: 18.816447019577026, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:44:25,461 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:44:25,461 - GitaChatbot - INFO - Performance metric - conversation_history_length: 85, Context: {"type": "formatting"}
+2024-10-31 20:44:25,461 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:44:42,515 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:44:42,516 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:44:42,517 - GitaChatbot - INFO - Performance metric - total_response_time: 17.059656858444214, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:44:42,606 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:44:42,609 - GitaChatbot - INFO - Performance metric - conversation_history_length: 146, Context: {"type": "formatting"}
+2024-10-31 20:44:42,610 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:44:57,996 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:44:57,998 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:44:57,999 - GitaChatbot - INFO - Performance metric - total_response_time: 15.3959481716156, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:44:58,091 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:44:58,091 - GitaChatbot - INFO - Performance metric - conversation_history_length: 207, Context: {"type": "formatting"}
+2024-10-31 20:44:58,094 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:45:14,641 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:45:14,643 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:45:14,643 - GitaChatbot - INFO - Performance metric - total_response_time: 16.557291746139526, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:45:14,754 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:45:14,754 - GitaChatbot - INFO - Performance metric - conversation_history_length: 496, Context: {"type": "formatting"}
+2024-10-31 20:45:14,755 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:45:31,318 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:45:31,320 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:45:31,320 - GitaChatbot - INFO - Performance metric - total_response_time: 16.570000171661377, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:45:31,407 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:45:31,408 - GitaChatbot - INFO - Performance metric - conversation_history_length: 785, Context: {"type": "formatting"}
+2024-10-31 20:45:31,408 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:45:45,331 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:45:45,333 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:45:45,333 - GitaChatbot - INFO - Performance metric - total_response_time: 13.928683519363403, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:45:45,482 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:45:45,484 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1074, Context: {"type": "formatting"}
+2024-10-31 20:45:45,484 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:46:02,973 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:46:02,975 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:46:02,976 - GitaChatbot - INFO - Performance metric - total_response_time: 17.49842929840088, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:46:03,081 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:46:03,081 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1092, Context: {"type": "formatting"}
+2024-10-31 20:46:03,082 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:46:21,994 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:46:21,996 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:46:21,997 - GitaChatbot - INFO - Performance metric - total_response_time: 18.919294834136963, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:46:22,097 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:46:22,098 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1120, Context: {"type": "formatting"}
+2024-10-31 20:46:22,099 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:46:39,211 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:46:39,213 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:46:39,214 - GitaChatbot - INFO - Performance metric - total_response_time: 17.12156915664673, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:46:39,309 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:46:39,310 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1123, Context: {"type": "formatting"}
+2024-10-31 20:46:39,310 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:46:54,114 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:46:54,116 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:46:54,116 - GitaChatbot - INFO - Performance metric - total_response_time: 14.810360431671143, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:46:54,231 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:46:54,232 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1119, Context: {"type": "formatting"}
+2024-10-31 20:46:54,232 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:47:09,806 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:47:09,807 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:47:09,807 - GitaChatbot - INFO - Performance metric - total_response_time: 15.580579996109009, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:47:09,900 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:47:09,901 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1116, Context: {"type": "formatting"}
+2024-10-31 20:47:09,901 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:47:26,202 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:47:26,204 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:47:26,204 - GitaChatbot - INFO - Performance metric - total_response_time: 16.307693004608154, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:47:26,296 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:47:26,296 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1126, Context: {"type": "formatting"}
+2024-10-31 20:47:26,297 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:47:42,607 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:47:42,609 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:47:42,609 - GitaChatbot - INFO - Performance metric - total_response_time: 16.317196369171143, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:47:42,720 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:47:42,721 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1137, Context: {"type": "formatting"}
+2024-10-31 20:47:42,721 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:47:58,833 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:47:58,835 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:47:58,836 - GitaChatbot - INFO - Performance metric - total_response_time: 16.119136333465576, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:47:58,937 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:47:58,938 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1114, Context: {"type": "formatting"}
+2024-10-31 20:47:58,938 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:48:16,297 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:48:16,299 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:48:16,299 - GitaChatbot - INFO - Performance metric - total_response_time: 17.36401605606079, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:48:16,430 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:48:16,430 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1114, Context: {"type": "formatting"}
+2024-10-31 20:48:16,431 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:48:35,094 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:48:35,096 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:48:35,096 - GitaChatbot - INFO - Performance metric - total_response_time: 18.669062852859497, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:48:35,196 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:48:35,196 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1095, Context: {"type": "formatting"}
+2024-10-31 20:48:35,197 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:48:52,391 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:48:52,393 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:48:52,394 - GitaChatbot - INFO - Performance metric - total_response_time: 17.20767903327942, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:48:52,510 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:48:52,511 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1046, Context: {"type": "formatting"}
+2024-10-31 20:48:52,512 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:49:09,599 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:49:09,600 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:49:09,600 - GitaChatbot - INFO - Performance metric - total_response_time: 17.093567609786987, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:49:09,706 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:49:09,706 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1044, Context: {"type": "formatting"}
+2024-10-31 20:49:09,707 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:49:29,311 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:49:29,313 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:49:29,313 - GitaChatbot - INFO - Performance metric - total_response_time: 19.610546827316284, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:49:29,447 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:49:29,448 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1031, Context: {"type": "formatting"}
+2024-10-31 20:49:29,448 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:49:50,575 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:49:50,577 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:49:50,577 - GitaChatbot - INFO - Performance metric - total_response_time: 21.13428521156311, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:49:50,693 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:49:50,693 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1031, Context: {"type": "formatting"}
+2024-10-31 20:49:50,694 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:50:07,154 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:50:07,156 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:50:07,156 - GitaChatbot - INFO - Performance metric - total_response_time: 16.467292070388794, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:50:07,290 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:50:07,291 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1010, Context: {"type": "formatting"}
+2024-10-31 20:50:07,292 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:50:28,516 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:50:28,517 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:50:28,518 - GitaChatbot - INFO - Performance metric - total_response_time: 21.23342204093933, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:50:28,628 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:50:28,628 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1062, Context: {"type": "formatting"}
+2024-10-31 20:50:28,628 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:50:45,490 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:50:45,491 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:50:45,491 - GitaChatbot - INFO - Performance metric - total_response_time: 16.868672370910645, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:50:45,594 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:50:45,594 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1084, Context: {"type": "formatting"}
+2024-10-31 20:50:45,594 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:51:06,230 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:51:06,232 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:51:06,232 - GitaChatbot - INFO - Performance metric - total_response_time: 20.643028736114502, Context: {"question_length": 26, "session_id": "289283710021528571"}
+2024-10-31 20:51:06,454 - GitaChatbot - INFO - New interaction - Session: -4679311231207111412, Question: What is dharma of parents?
+2024-10-31 20:51:06,454 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1070, Context: {"type": "formatting"}
+2024-10-31 20:51:06,455 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
