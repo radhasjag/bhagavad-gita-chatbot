@@ -14,13 +14,30 @@ def initialize_session_state():
 @cache_response
 def process_question(question, gita_processor, response_generator, context, conversation):
     """Process user question with caching"""
-    relevant_verses = gita_processor.find_relevant_verses(question)
-    return response_generator.generate_response(
-        question,
-        relevant_verses,
-        context,
-        conversation
-    )
+    try:
+        relevant_verses = gita_processor.find_relevant_verses(question)
+        response = response_generator.generate_response(
+            question,
+            relevant_verses,
+            context,
+            conversation
+        )
+        
+        # Verify response format
+        if not isinstance(response, dict):
+            monitor.log_error("system", ValueError("Invalid response format - not a dictionary"), 
+                            {"context": "process_question", "response_type": type(response)})
+            raise ValueError("Invalid response format")
+            
+        if "short_answer" not in response or "detailed_explanation" not in response:
+            monitor.log_error("system", ValueError("Invalid response format - missing required fields"), 
+                            {"context": "process_question", "response_keys": str(response.keys())})
+            raise ValueError("Response missing required fields")
+            
+        return response
+    except Exception as e:
+        monitor.log_error("system", e, {"context": "process_question"})
+        raise
 
 def format_metric_value(value):
     """Format metric values to be more readable"""
@@ -82,156 +99,164 @@ def main():
 
     st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
     
-    # Initialize session and state
-    initialize_session_state()
-    session_id = init_session()
-    
-    # Initialize processors
-    gita_processor = GitaProcessor()
-    response_generator = ResponseGenerator()
+    try:
+        # Initialize session and state
+        initialize_session_state()
+        session_id = init_session()
+        
+        # Initialize processors
+        gita_processor = GitaProcessor()
+        response_generator = ResponseGenerator()
 
-    # Sidebar Metrics Display
-    st.sidebar.markdown("## System Metrics Dashboard")
-    metrics = monitor.get_metrics()
-    
-    # Metrics with simple text-based icons
-    metric_icons = {
-        'total_interactions': '[>]',
-        'successful_responses': '[+]',
-        'failed_responses': '[!]',
-        'avg_response_time': '[~]',
-        'active_sessions': '[*]',
-    }
-    
-    for metric, value in metrics.items():
-        icon = metric_icons.get(metric, '[#]')
-        formatted_value = format_metric_value(value)
-        metric_name = metric.replace('_', ' ').title()
+        # Sidebar Metrics Display
+        st.sidebar.markdown("## System Metrics Dashboard")
+        metrics = monitor.get_metrics()
+        
+        # Metrics with simple text-based icons
+        metric_icons = {
+            'total_interactions': '[>]',
+            'successful_responses': '[+]',
+            'failed_responses': '[!]',
+            'avg_response_time': '[~]',
+            'active_sessions': '[*]',
+        }
+        
+        for metric, value in metrics.items():
+            icon = metric_icons.get(metric, '[#]')
+            formatted_value = format_metric_value(value)
+            metric_name = metric.replace('_', ' ').title()
+            
+            st.sidebar.markdown(f"""
+                <div class="metric-container">
+                    <div class="metric-title">{icon} {metric_name}</div>
+                    <div class="metric-value">{formatted_value}</div>
+                </div>
+            """, unsafe_allow_html=True)
+        
+        # Health Status Display
+        health_status = get_health_status()
+        st.sidebar.markdown("### System Health Status")
+        status_class = "status-healthy" if health_status["status"] == "healthy" else "status-degraded"
+        status_icon = "[OK]" if health_status["status"] == "healthy" else "[!!]"
         
         st.sidebar.markdown(f"""
-            <div class="metric-container">
-                <div class="metric-title">{icon} {metric_name}</div>
-                <div class="metric-value">{formatted_value}</div>
+            <div class="health-status {status_class}">
+                <div class="metric-title">
+                    {status_icon} Status: {health_status["status"].title()}
+                </div>
             </div>
         """, unsafe_allow_html=True)
-    
-    # Health Status Display
-    health_status = get_health_status()
-    st.sidebar.markdown("### System Health Status")
-    status_class = "status-healthy" if health_status["status"] == "healthy" else "status-degraded"
-    status_icon = "[OK]" if health_status["status"] == "healthy" else "[!!]"
-    
-    st.sidebar.markdown(f"""
-        <div class="health-status {status_class}">
-            <div class="metric-title">
-                {status_icon} Status: {health_status["status"].title()}
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
-    
-    with st.sidebar.expander("View Health Details"):
-        st.json(health_status)
-    
-    # Add a spiritual background description
-    st.markdown("""
-    *Welcome, seeker of wisdom. I am Krishna, your guide through the eternal teachings 
-    of the Bhagavad Gita. Ask your questions, and I shall illuminate the path.*
-    """)
-    
-    # Add follow-up questions explanation using Streamlit components
-    st.markdown("### 💫 Continuous Dialogue Feature")
-    
-    st.markdown("""
-    Our conversation is a continuous journey of wisdom. You can ask follow-up questions, 
-    and I will maintain the context of our discussion, just as I did with Arjuna on the 
-    battlefield of Kurukshetra.
-    """)
-    
-    # Example container with custom styling
-    st.markdown("#### Examples of Questions")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.info("""
-        **Starting Question:**
-        "What is the main message of Bhagavad Gita?"
         
-        **Career Guidance:**
-        "Should I quit my job to pursue a startup?"
-        """)
-    
-    with col2:
-        st.info("""
-        **Self-Discovery:**
-        "What is dharma and how do I follow it?"
+        with st.sidebar.expander("View Health Details"):
+            st.json(health_status)
         
-        **Follow-up:**
-        "How can I balance my responsibilities?"
+        # Add a spiritual background description
+        st.markdown("""
+        *Welcome, seeker of wisdom. I am Krishna, your guide through the eternal teachings 
+        of the Bhagavad Gita. Ask your questions, and I shall illuminate the path.*
         """)
-    
-    st.markdown("""
-    💡 *Each response includes both a concise answer and a detailed explanation with relevant verses. 
-    Click "detailed explanation" to see the complete response with verse references.*
-    """)
-    
-    # Display conversation history before the input box
-    if st.session_state.conversation:
-        st.subheader("Our Conversation")
-        for idx, conv in enumerate(st.session_state.conversation):
-            with st.container():
-                st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
-                st.markdown(f"**Krishna's Wisdom:**\n{conv['short_answer']}")
+        
+        # Add follow-up questions explanation using Streamlit components
+        st.markdown("### 💫 Continuous Dialogue Feature")
+        
+        st.markdown("""
+        Our conversation is a continuous journey of wisdom. You can ask follow-up questions, 
+        and I will maintain the context of our discussion, just as I did with Arjuna on the 
+        battlefield of Kurukshetra.
+        """)
+        
+        # Example container with custom styling
+        st.markdown("#### Examples of Questions")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            st.info("""
+            **Starting Question:**
+            "What is the main message of Bhagavad Gita?"
+            
+            **Career Guidance:**
+            "Should I quit my job to pursue a startup?"
+            """)
+        
+        with col2:
+            st.info("""
+            **Self-Discovery:**
+            "What is dharma and how do I follow it?"
+            
+            **Follow-up:**
+            "How can I balance my responsibilities?"
+            """)
+        
+        st.markdown("""
+        💡 *Each response includes both a concise answer and a detailed explanation with relevant verses. 
+        Click "detailed explanation" to see the complete response with verse references.*
+        """)
+        
+        # Display conversation history
+        if st.session_state.conversation:
+            st.subheader("Our Conversation")
+            for idx, conv in enumerate(st.session_state.conversation):
+                with st.container():
+                    st.text_area(f"You asked:", conv["question"], height=50, disabled=True, key=f"q_{idx}")
+                    st.markdown(f"**Krishna's Wisdom:**\n{conv['short_answer']}")
+                    
+                    with st.expander("Click for detailed explanation with verses"):
+                        st.markdown(conv['detailed_explanation'])
+                    st.markdown("---")
+        
+        # User input box below conversation history
+        user_question = st.text_input("What wisdom do you seek?", key="user_input")
+        
+        if user_question:
+            # Check rate limit
+            if not rate_limiter.is_allowed(session_id):
+                st.warning("Please wait a moment before asking another question.")
+                return
+            
+            try:
+                start_time = time.time()
                 
-                with st.expander("Click for detailed explanation with verses"):
-                    st.markdown(conv['detailed_explanation'])
-                st.markdown("---")
+                # Process the question and generate response
+                response_data = process_question(
+                    user_question,
+                    gita_processor,
+                    response_generator,
+                    st.session_state.context,
+                    st.session_state.conversation
+                )
+                
+                # Verify response data before updating conversation
+                if isinstance(response_data, dict) and "short_answer" in response_data and "detailed_explanation" in response_data:
+                    # Add to conversation history
+                    st.session_state.conversation.append({
+                        "question": user_question,
+                        "short_answer": response_data["short_answer"],
+                        "detailed_explanation": response_data["detailed_explanation"]
+                    })
+                    
+                    # Log performance metrics
+                    response_time = time.time() - start_time
+                    monitor.log_performance_metric(
+                        "total_response_time",
+                        response_time,
+                        {"question_length": len(user_question), "session_id": session_id}
+                    )
+                    
+                    # Rerun to update the conversation display
+                    st.rerun()
+                else:
+                    monitor.log_error(session_id, ValueError("Invalid response data format"), 
+                                    {"context": "main_execution", "response_data": str(response_data)})
+                    raise ValueError("Invalid response data format")
+                
+            except Exception as e:
+                monitor.log_error(session_id, e, {"context": "main_execution", "trace": str(e)})
+                st.error("Forgive me, dear one. I am unable to provide guidance at this moment. Please try again.")
     
-    # User input box now appears after the conversation history
-    user_question = st.text_input("What wisdom do you seek?", key="user_input")
-    
-    if user_question:
-        # Check rate limit
-        if not rate_limiter.is_allowed(session_id):
-            st.warning("Please wait a moment before asking another question.")
-            return
-        
-        try:
-            start_time = time.time()
-            
-            # Process the question and generate response
-            response_data = process_question(
-                user_question,
-                gita_processor,
-                response_generator,
-                st.session_state.context,
-                st.session_state.conversation
-            )
-            
-            # Add to conversation history
-            st.session_state.conversation.append({
-                "question": user_question,
-                "short_answer": response_data["short_answer"],
-                "detailed_explanation": response_data["detailed_explanation"]
-            })
-            
-            # Log performance metrics
-            response_time = time.time() - start_time
-            monitor.log_performance_metric(
-                "total_response_time",
-                response_time,
-                {"question_length": len(user_question), "session_id": session_id}
-            )
-            
-            # Clear the input box before rerunning
-            st.session_state.user_input = ''
-            
-            # Rerun to update the conversation display
-            st.rerun()
-            
-        except Exception as e:
-            monitor.log_error(session_id, e, {"context": "main_execution"})
-            st.error("Forgive me, dear one. I am unable to provide guidance at this moment. Please try again.")
+    except Exception as e:
+        monitor.log_error("system", e, {"context": "main_function"})
+        st.error("The system is experiencing difficulties. Please try again later.")
 
 if __name__ == "__main__":
     main()
