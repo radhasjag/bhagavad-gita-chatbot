@@ -158,7 +158,7 @@ def main():
         "What is the main message of Bhagavad Gita?"
         
         **Career Guidance:**
-        "Should I quit my job to pursue a startup?"
+        "Should I quit my job and do a startup?"
         """)
     
     with col2:
