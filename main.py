@@ -10,6 +10,8 @@ def initialize_session_state():
         st.session_state.conversation = []
     if 'context' not in st.session_state:
         st.session_state.context = []
+    if "submitted_question" not in st.session_state:
+        st.session_state.submitted_question = ""
 
 @cache_response
 def process_question(question, gita_processor, response_generator, context, conversation):
@@ -206,9 +208,12 @@ def main():
                     st.markdown("---")
         
         # Move user input box below conversation history
-        user_question = st.text_input("What wisdom do you seek?", key="user_input")
+        user_question = st.text_input("What wisdom do you seek?", value="", key="user_input")
         
         if user_question:
+            # Store the submitted question
+            st.session_state.submitted_question = user_question
+            
             # Check rate limit
             if not rate_limiter.is_allowed(session_id):
                 st.warning("Please wait a moment before asking another question.")
@@ -216,6 +221,10 @@ def main():
             
             try:
                 start_time = time.time()
+                
+                # Debug logging before processing
+                print(f"Processing question: {user_question}")
+                print(f"Current conversation length: {len(st.session_state.conversation)}")
                 
                 # Process the question and generate response
                 response_data = process_question(
@@ -225,6 +234,9 @@ def main():
                     st.session_state.context,
                     st.session_state.conversation
                 )
+                
+                # Debug logging after processing
+                print(f"Response data received: {response_data}")
                 
                 # Verify response data before updating conversation
                 if isinstance(response_data, dict) and "short_answer" in response_data and "detailed_explanation" in response_data:
@@ -242,9 +254,6 @@ def main():
                         response_time,
                         {"question_length": len(user_question), "session_id": session_id}
                     )
-                    
-                    # Clear the input box before rerunning
-                    st.session_state.user_input = ''
                     
                     # Rerun to update the conversation display
                     st.rerun()

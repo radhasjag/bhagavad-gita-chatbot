@@ -291,3 +291,19 @@
 2024-10-31 21:13:56,443 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-31 21:13:56,445 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
 2024-10-31 21:13:56,445 - GitaChatbot - INFO - Performance metric - total_response_time: 17.696248292922974, Context: {"question_length": 30, "session_id": "2086394783691174212"}
+2024-10-31 21:17:01,602 - GitaChatbot - INFO - New interaction - Session: 407157174236679954, Question: What is the right way to perform karma according to Krishna?
+2024-10-31 21:17:01,602 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:17:24,210 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:17:24,214 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 21:17:24,214 - GitaChatbot - INFO - Performance metric - total_response_time: 22.615498065948486, Context: {"question_length": 60, "session_id": "960449796871812035"}
+2024-10-31 21:17:24,219 - GitaChatbot - ERROR - Error occurred: {
+  "timestamp": "2024-10-31T21:17:24.215124",
+  "session_id": "960449796871812035",
+  "error_type": "StreamlitAPIException",
+  "error_message": "`st.session_state.user_input` cannot be modified after the widget with key `user_input` is instantiated.",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/SrikrishnaBot/main.py\", line 247, in main\n    st.session_state.user_input = ''\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py\", line 410, in wrapped_func\n    result = non_optional_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py\", line 135, in __setattr__\n    self[key] = value\n    ~~~~^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/metrics_util.py\", line 410, in wrapped_func\n    result = non_optional_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state_proxy.py\", line 113, in __setitem__\n    get_session_state()[key] = value\n    ~~~~~~~~~~~~~~~~~~~^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/safe_session_state.py\", line 99, in __setitem__\n    self._state[key] = value\n    ~~~~~~~~~~~^^^^^\n  File \"/home/runner/SrikrishnaBot/.pythonlibs/lib/python3.11/site-packages/streamlit/runtime/state/session_state.py\", line 516, in __setitem__\n    raise StreamlitAPIException(\nstreamlit.errors.StreamlitAPIException: `st.session_state.user_input` cannot be modified after the widget with key `user_input` is instantiated.\n",
+  "context": {
+    "context": "main_execution",
+    "trace": "`st.session_state.user_input` cannot be modified after the widget with key `user_input` is instantiated."
+  }
+}
