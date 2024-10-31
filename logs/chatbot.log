@@ -62,3 +62,34 @@
 2024-10-31 20:37:28,046 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-31 20:37:28,050 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
 2024-10-31 20:37:28,052 - GitaChatbot - INFO - Performance metric - total_response_time: 17.651712894439697, Context: {"question_length": 108, "session_id": "2127314208430483971"}
+2024-10-31 20:40:50,926 - GitaChatbot - INFO - New interaction - Session: -3903670854533742962, Question: Can I eat non veg?
+2024-10-31 20:40:50,927 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:41:09,883 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:41:09,885 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:41:09,886 - GitaChatbot - INFO - Performance metric - total_response_time: 18.9628643989563, Context: {"question_length": 18, "session_id": "1387928372879027006"}
+2024-10-31 20:41:09,887 - GitaChatbot - ERROR - Error occurred: {
+  "timestamp": "2024-10-31T20:41:09.886647",
+  "session_id": "1387928372879027006",
+  "error_type": "AttributeError",
+  "error_message": "module 'streamlit' has no attribute 'experimental_rerun'",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/SrikrishnaBot/main.py\", line 227, in main\n    st.experimental_rerun()\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'streamlit' has no attribute 'experimental_rerun'\n",
+  "context": {
+    "context": "main_execution"
+  }
+}
+2024-10-31 20:41:26,673 - GitaChatbot - INFO - New interaction - Session: -9215737694121263964, Question: What is good karma?
+2024-10-31 20:41:26,674 - GitaChatbot - INFO - Performance metric - conversation_history_length: 315, Context: {"type": "formatting"}
+2024-10-31 20:41:26,675 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 20:41:45,722 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 20:41:45,724 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-10-31 20:41:45,724 - GitaChatbot - INFO - Performance metric - total_response_time: 19.0536949634552, Context: {"question_length": 19, "session_id": "1387928372879027006"}
+2024-10-31 20:41:45,725 - GitaChatbot - ERROR - Error occurred: {
+  "timestamp": "2024-10-31T20:41:45.724684",
+  "session_id": "1387928372879027006",
+  "error_type": "AttributeError",
+  "error_message": "module 'streamlit' has no attribute 'experimental_rerun'",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/runner/SrikrishnaBot/main.py\", line 227, in main\n    st.experimental_rerun()\n    ^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'streamlit' has no attribute 'experimental_rerun'\n",
+  "context": {
+    "context": "main_execution"
+  }
+}

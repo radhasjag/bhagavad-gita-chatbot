@@ -223,8 +223,8 @@ def main():
                 {"question_length": len(user_question), "session_id": session_id}
             )
             
-            # Rerun to update the conversation display
-            st.experimental_rerun()
+            # Update rerun command to use st.rerun() instead of st.experimental_rerun()
+            st.rerun()
             
         except Exception as e:
             monitor.log_error(session_id, e, {"context": "main_execution"})
