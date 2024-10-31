@@ -154,20 +154,20 @@ def main():
     
     with col1:
         st.info("""
-        **Getting Started:**
+        **Starting Question:**
         "What is the main message of Bhagavad Gita?"
         
-        **Follow-up:**
-        "How can I apply these teachings in my daily life?"
+        **Career Guidance:**
+        "Should I quit my job to pursue a startup?"
         """)
     
     with col2:
         st.info("""
-        **Deeper Understanding:**
-        "What is the nature of the soul?"
+        **Self-Discovery:**
+        "What is dharma and how do I follow it?"
         
         **Follow-up:**
-        "How is the soul different from the body?"
+        "How can I balance my responsibilities?"
         """)
     
     st.markdown("""
