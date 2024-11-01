@@ -321,3 +321,5 @@
 2024-10-31 21:23:27,597 - GitaChatbot - INFO - New interaction - Session: 6358264984868156373, Question: What is my dharma as a mother?
 2024-10-31 21:23:27,598 - GitaChatbot - INFO - Performance metric - conversation_history_length: 608, Context: {"type": "formatting"}
 2024-10-31 21:23:27,598 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-10-31 21:23:44,583 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-10-31 21:23:44,585 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
