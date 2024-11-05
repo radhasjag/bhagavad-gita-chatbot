@@ -2,29 +2,47 @@ import os
 import time
 import json
 from openai import AzureOpenAI, APIError, APIConnectionError, RateLimitError
+from langchain.callbacks import tracing_enabled
+from langchain.llms import AzureOpenAI as LangChainAzureOpenAI
 import streamlit as st
 from utils.monitoring import monitor
 
 class ResponseGenerator:
     def __init__(self):
         try:
+            # Initialize Azure OpenAI configuration
             self.api_key = os.environ.get("AZURE_OPENAI_API_KEY")
             self.endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
             self.deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME")
+            
+            # Initialize LangChain tracing
+            os.environ["LANGCHAIN_TRACING_V2"] = "true"
+            os.environ["LANGCHAIN_PROJECT"] = "bhagavad-gita-chatbot"
             
             if not all([self.api_key, self.endpoint, self.deployment]):
                 print("Warning: Azure OpenAI configuration is missing!")
                 raise ValueError("Azure OpenAI configuration is not complete")
             
             print("Azure OpenAI configuration is set")
+            
+            # Initialize both Azure OpenAI and LangChain clients
             self.client = AzureOpenAI(
                 api_key=self.api_key,
                 api_version="2023-05-15",
                 azure_endpoint=self.endpoint
             )
+            
+            self.langchain_llm = LangChainAzureOpenAI(
+                deployment_name=self.deployment,
+                model_name="gpt-4",
+                temperature=0.7,
+                max_tokens=1000
+            )
+            
         except Exception as e:
             print(f"Error initializing Azure OpenAI client: {str(e)}")
             self.client = None
+            self.langchain_llm = None
         
     def format_conversation_history(self, conversation):
         """Format the conversation history for the prompt."""
@@ -72,15 +90,14 @@ class ResponseGenerator:
 
     def generate_response(self, question, relevant_verses, context, conversation=[]):
         """Generate both concise and detailed responses in Krishna's voice using Azure OpenAI."""
-        # Initialize session_id before try block
         session_id = str(hash(question))
         
         try:
             start_time = time.time()
             monitor.log_interaction(session_id, question)
 
-            if self.client is None:
-                raise ValueError("Azure OpenAI client not properly initialized")
+            if self.client is None or self.langchain_llm is None:
+                raise ValueError("Azure OpenAI or LangChain client not properly initialized")
             
             if not question or not isinstance(question, str):
                 raise ValueError("Invalid question format")
@@ -118,15 +135,16 @@ Relevant verses from Bhagavad Gita:
 Please provide both a concise answer and detailed explanation using the verses above."""
 
             try:
-                response = self.client.chat.completions.create(
-                    model=self.deployment,  # Using deployment name instead of model
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt}
-                    ],
-                    temperature=0.7,
-                    max_tokens=1000
-                )
+                with tracing_enabled() as session:
+                    response = self.client.chat.completions.create(
+                        model=self.deployment,
+                        messages=[
+                            {"role": "system", "content": system_prompt},
+                            {"role": "user", "content": user_prompt}
+                        ],
+                        temperature=0.7,
+                        max_tokens=1000
+                    )
                 
                 if not response or not response.choices:
                     raise ValueError("Empty response from Azure OpenAI API")

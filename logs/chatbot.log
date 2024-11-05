@@ -326,3 +326,599 @@
 2024-11-01 16:18:40,487 - GitaChatbot - INFO - Performance metric - session_cleanup: 5426.918790817261, Context: {"session_id": "1311859210667223597"}
 2024-11-01 16:18:40,490 - GitaChatbot - INFO - Performance metric - session_cleanup: 5417.925762414932, Context: {"session_id": "1301097190854552118"}
 2024-11-01 16:18:40,493 - GitaChatbot - INFO - Performance metric - session_cleanup: 5417.5784702301025, Context: {"session_id": "2109845167688444470"}
+2024-11-05 02:31:59,131 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:31:59,131 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:03,400 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:03,402 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:03,403 - GitaChatbot - INFO - Performance metric - total_response_time: 5.284769535064697, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:03,575 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:03,575 - GitaChatbot - INFO - Performance metric - conversation_history_length: 88, Context: {"type": "formatting"}
+2024-11-05 02:32:03,576 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:08,860 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:08,862 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:08,862 - GitaChatbot - INFO - Performance metric - total_response_time: 5.290478706359863, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:09,017 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:09,020 - GitaChatbot - INFO - Performance metric - conversation_history_length: 360, Context: {"type": "formatting"}
+2024-11-05 02:32:09,021 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:13,781 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:13,783 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:13,784 - GitaChatbot - INFO - Performance metric - total_response_time: 4.769110918045044, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:13,942 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:13,943 - GitaChatbot - INFO - Performance metric - conversation_history_length: 633, Context: {"type": "formatting"}
+2024-11-05 02:32:13,943 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:20,076 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:20,078 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:20,079 - GitaChatbot - INFO - Performance metric - total_response_time: 6.139288425445557, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:20,264 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:20,264 - GitaChatbot - INFO - Performance metric - conversation_history_length: 863, Context: {"type": "formatting"}
+2024-11-05 02:32:20,265 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:24,612 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:24,615 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:24,615 - GitaChatbot - INFO - Performance metric - total_response_time: 4.354210138320923, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:24,804 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:24,805 - GitaChatbot - INFO - Performance metric - conversation_history_length: 868, Context: {"type": "formatting"}
+2024-11-05 02:32:24,805 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:28,522 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:28,524 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:28,525 - GitaChatbot - INFO - Performance metric - total_response_time: 3.7235116958618164, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:28,704 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:28,704 - GitaChatbot - INFO - Performance metric - conversation_history_length: 857, Context: {"type": "formatting"}
+2024-11-05 02:32:28,705 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:32,600 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:32,601 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:32,602 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9006683826446533, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:32,776 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:32,776 - GitaChatbot - INFO - Performance metric - conversation_history_length: 845, Context: {"type": "formatting"}
+2024-11-05 02:32:32,777 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:37,728 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:37,731 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:37,732 - GitaChatbot - INFO - Performance metric - total_response_time: 4.959447622299194, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:37,925 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:37,926 - GitaChatbot - INFO - Performance metric - conversation_history_length: 861, Context: {"type": "formatting"}
+2024-11-05 02:32:37,926 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:42,346 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:42,347 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:42,348 - GitaChatbot - INFO - Performance metric - total_response_time: 4.425931215286255, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:42,509 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:42,511 - GitaChatbot - INFO - Performance metric - conversation_history_length: 926, Context: {"type": "formatting"}
+2024-11-05 02:32:42,511 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:48,451 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:48,453 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:48,453 - GitaChatbot - INFO - Performance metric - total_response_time: 5.946552515029907, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:48,617 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:48,617 - GitaChatbot - INFO - Performance metric - conversation_history_length: 968, Context: {"type": "formatting"}
+2024-11-05 02:32:48,618 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:52,470 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:52,472 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:52,472 - GitaChatbot - INFO - Performance metric - total_response_time: 3.858529567718506, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:52,650 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:52,650 - GitaChatbot - INFO - Performance metric - conversation_history_length: 968, Context: {"type": "formatting"}
+2024-11-05 02:32:52,651 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:32:56,656 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:32:56,658 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:32:56,659 - GitaChatbot - INFO - Performance metric - total_response_time: 4.0116496086120605, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:32:56,831 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:32:56,832 - GitaChatbot - INFO - Performance metric - conversation_history_length: 968, Context: {"type": "formatting"}
+2024-11-05 02:32:56,832 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:15,941 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:15,942 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:15,943 - GitaChatbot - INFO - Performance metric - total_response_time: 19.114173412322998, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:16,118 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:16,118 - GitaChatbot - INFO - Performance metric - conversation_history_length: 943, Context: {"type": "formatting"}
+2024-11-05 02:33:16,119 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:20,496 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:20,498 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:20,499 - GitaChatbot - INFO - Performance metric - total_response_time: 4.383886814117432, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:20,683 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:20,683 - GitaChatbot - INFO - Performance metric - conversation_history_length: 949, Context: {"type": "formatting"}
+2024-11-05 02:33:20,684 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:26,050 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:26,051 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:26,052 - GitaChatbot - INFO - Performance metric - total_response_time: 5.37186861038208, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:26,230 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:26,231 - GitaChatbot - INFO - Performance metric - conversation_history_length: 900, Context: {"type": "formatting"}
+2024-11-05 02:33:26,231 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:29,579 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:29,581 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:29,582 - GitaChatbot - INFO - Performance metric - total_response_time: 3.3541276454925537, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:29,756 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:29,757 - GitaChatbot - INFO - Performance metric - conversation_history_length: 882, Context: {"type": "formatting"}
+2024-11-05 02:33:29,758 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:34,948 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:34,950 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:34,951 - GitaChatbot - INFO - Performance metric - total_response_time: 5.197261810302734, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:35,132 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:35,133 - GitaChatbot - INFO - Performance metric - conversation_history_length: 882, Context: {"type": "formatting"}
+2024-11-05 02:33:35,135 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:39,831 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:39,833 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:39,833 - GitaChatbot - INFO - Performance metric - total_response_time: 4.704084873199463, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:40,036 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:40,036 - GitaChatbot - INFO - Performance metric - conversation_history_length: 881, Context: {"type": "formatting"}
+2024-11-05 02:33:40,037 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:45,438 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:45,440 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:45,441 - GitaChatbot - INFO - Performance metric - total_response_time: 5.409343004226685, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:45,633 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:45,633 - GitaChatbot - INFO - Performance metric - conversation_history_length: 884, Context: {"type": "formatting"}
+2024-11-05 02:33:45,634 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:54,447 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:54,448 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:54,449 - GitaChatbot - INFO - Performance metric - total_response_time: 8.81978440284729, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:54,629 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:54,630 - GitaChatbot - INFO - Performance metric - conversation_history_length: 870, Context: {"type": "formatting"}
+2024-11-05 02:33:54,630 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:33:58,184 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:33:58,187 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:33:58,187 - GitaChatbot - INFO - Performance metric - total_response_time: 3.561441659927368, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:33:58,378 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:33:58,379 - GitaChatbot - INFO - Performance metric - conversation_history_length: 911, Context: {"type": "formatting"}
+2024-11-05 02:33:58,380 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:02,751 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:02,753 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:02,754 - GitaChatbot - INFO - Performance metric - total_response_time: 4.379058599472046, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:02,941 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:02,941 - GitaChatbot - INFO - Performance metric - conversation_history_length: 917, Context: {"type": "formatting"}
+2024-11-05 02:34:02,941 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:08,711 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:08,713 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:08,714 - GitaChatbot - INFO - Performance metric - total_response_time: 5.7759177684783936, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:08,932 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:08,933 - GitaChatbot - INFO - Performance metric - conversation_history_length: 970, Context: {"type": "formatting"}
+2024-11-05 02:34:08,933 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:12,894 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:12,896 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:12,897 - GitaChatbot - INFO - Performance metric - total_response_time: 3.970475435256958, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:13,103 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:13,104 - GitaChatbot - INFO - Performance metric - conversation_history_length: 985, Context: {"type": "formatting"}
+2024-11-05 02:34:13,105 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:17,277 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:17,279 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:17,280 - GitaChatbot - INFO - Performance metric - total_response_time: 4.1808295249938965, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:17,466 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:17,466 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1019, Context: {"type": "formatting"}
+2024-11-05 02:34:17,467 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:22,728 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:22,730 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:22,730 - GitaChatbot - INFO - Performance metric - total_response_time: 5.268054723739624, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:22,921 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:22,921 - GitaChatbot - INFO - Performance metric - conversation_history_length: 994, Context: {"type": "formatting"}
+2024-11-05 02:34:22,923 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:27,113 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:27,116 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:27,116 - GitaChatbot - INFO - Performance metric - total_response_time: 4.19770884513855, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:27,313 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:27,313 - GitaChatbot - INFO - Performance metric - conversation_history_length: 947, Context: {"type": "formatting"}
+2024-11-05 02:34:27,314 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:32,269 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:32,272 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:32,272 - GitaChatbot - INFO - Performance metric - total_response_time: 4.963456153869629, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:32,461 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:32,461 - GitaChatbot - INFO - Performance metric - conversation_history_length: 922, Context: {"type": "formatting"}
+2024-11-05 02:34:32,462 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:37,001 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:37,003 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:37,003 - GitaChatbot - INFO - Performance metric - total_response_time: 4.545982837677002, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:37,208 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:37,209 - GitaChatbot - INFO - Performance metric - conversation_history_length: 941, Context: {"type": "formatting"}
+2024-11-05 02:34:37,212 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:41,770 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:41,773 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:41,774 - GitaChatbot - INFO - Performance metric - total_response_time: 4.568630218505859, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:42,025 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:42,027 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1010, Context: {"type": "formatting"}
+2024-11-05 02:34:42,027 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:49,346 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:49,348 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:49,349 - GitaChatbot - INFO - Performance metric - total_response_time: 7.326972961425781, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:49,547 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:49,548 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1032, Context: {"type": "formatting"}
+2024-11-05 02:34:49,549 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:54,987 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:54,989 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:54,990 - GitaChatbot - INFO - Performance metric - total_response_time: 5.446890115737915, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:55,204 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:55,207 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1042, Context: {"type": "formatting"}
+2024-11-05 02:34:55,207 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:34:59,129 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:34:59,131 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:34:59,132 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9302122592926025, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:34:59,334 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:34:59,335 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1013, Context: {"type": "formatting"}
+2024-11-05 02:34:59,335 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:03,553 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:03,556 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:03,556 - GitaChatbot - INFO - Performance metric - total_response_time: 4.225738525390625, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:03,764 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:03,764 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1003, Context: {"type": "formatting"}
+2024-11-05 02:35:03,765 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:08,337 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:08,339 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:08,340 - GitaChatbot - INFO - Performance metric - total_response_time: 4.580659627914429, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:08,541 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:08,542 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1004, Context: {"type": "formatting"}
+2024-11-05 02:35:08,544 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:12,036 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:12,038 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:12,038 - GitaChatbot - INFO - Performance metric - total_response_time: 3.5006275177001953, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:12,241 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:12,242 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1007, Context: {"type": "formatting"}
+2024-11-05 02:35:12,244 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:16,556 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:16,558 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:16,558 - GitaChatbot - INFO - Performance metric - total_response_time: 4.319720029830933, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:16,777 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:16,777 - GitaChatbot - INFO - Performance metric - conversation_history_length: 987, Context: {"type": "formatting"}
+2024-11-05 02:35:16,781 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:20,978 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:20,980 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:20,981 - GitaChatbot - INFO - Performance metric - total_response_time: 4.206768274307251, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:21,199 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:21,202 - GitaChatbot - INFO - Performance metric - conversation_history_length: 949, Context: {"type": "formatting"}
+2024-11-05 02:35:21,202 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:25,488 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:25,490 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:25,491 - GitaChatbot - INFO - Performance metric - total_response_time: 4.295978784561157, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:25,716 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:25,718 - GitaChatbot - INFO - Performance metric - conversation_history_length: 937, Context: {"type": "formatting"}
+2024-11-05 02:35:25,720 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:29,864 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:29,866 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:29,867 - GitaChatbot - INFO - Performance metric - total_response_time: 4.153759002685547, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:30,106 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:30,107 - GitaChatbot - INFO - Performance metric - conversation_history_length: 955, Context: {"type": "formatting"}
+2024-11-05 02:35:30,108 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:34,307 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:34,308 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:34,309 - GitaChatbot - INFO - Performance metric - total_response_time: 4.208675146102905, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:34,547 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:34,547 - GitaChatbot - INFO - Performance metric - conversation_history_length: 990, Context: {"type": "formatting"}
+2024-11-05 02:35:34,547 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:39,232 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:39,234 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:39,235 - GitaChatbot - INFO - Performance metric - total_response_time: 4.693130731582642, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:39,492 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:39,495 - GitaChatbot - INFO - Performance metric - conversation_history_length: 999, Context: {"type": "formatting"}
+2024-11-05 02:35:39,496 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:43,961 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:43,963 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:43,964 - GitaChatbot - INFO - Performance metric - total_response_time: 4.47492790222168, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:44,188 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:44,188 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1033, Context: {"type": "formatting"}
+2024-11-05 02:35:44,189 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:49,439 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:49,441 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:49,442 - GitaChatbot - INFO - Performance metric - total_response_time: 5.25703501701355, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:49,655 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:49,656 - GitaChatbot - INFO - Performance metric - conversation_history_length: 996, Context: {"type": "formatting"}
+2024-11-05 02:35:49,657 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:35:53,067 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:35:53,069 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:35:53,070 - GitaChatbot - INFO - Performance metric - total_response_time: 3.418437957763672, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:35:53,277 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:35:53,277 - GitaChatbot - INFO - Performance metric - conversation_history_length: 985, Context: {"type": "formatting"}
+2024-11-05 02:35:53,278 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:02,023 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:02,025 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:02,025 - GitaChatbot - INFO - Performance metric - total_response_time: 8.752294778823853, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:02,234 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:02,234 - GitaChatbot - INFO - Performance metric - conversation_history_length: 941, Context: {"type": "formatting"}
+2024-11-05 02:36:02,235 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:05,730 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:05,732 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:05,733 - GitaChatbot - INFO - Performance metric - total_response_time: 3.5023255348205566, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:05,976 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:05,976 - GitaChatbot - INFO - Performance metric - conversation_history_length: 968, Context: {"type": "formatting"}
+2024-11-05 02:36:05,977 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:10,454 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:10,456 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:10,457 - GitaChatbot - INFO - Performance metric - total_response_time: 4.486638784408569, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:10,683 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:10,684 - GitaChatbot - INFO - Performance metric - conversation_history_length: 977, Context: {"type": "formatting"}
+2024-11-05 02:36:10,684 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:17,582 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:17,584 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:17,585 - GitaChatbot - INFO - Performance metric - total_response_time: 6.908888816833496, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:17,802 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:17,803 - GitaChatbot - INFO - Performance metric - conversation_history_length: 998, Context: {"type": "formatting"}
+2024-11-05 02:36:17,803 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:22,180 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:22,182 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:22,183 - GitaChatbot - INFO - Performance metric - total_response_time: 4.385519504547119, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:22,393 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:22,396 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1011, Context: {"type": "formatting"}
+2024-11-05 02:36:22,396 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:26,560 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:26,562 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:26,563 - GitaChatbot - INFO - Performance metric - total_response_time: 4.17344069480896, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:26,784 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:26,785 - GitaChatbot - INFO - Performance metric - conversation_history_length: 969, Context: {"type": "formatting"}
+2024-11-05 02:36:26,790 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:31,297 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:31,299 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:31,299 - GitaChatbot - INFO - Performance metric - total_response_time: 4.518592596054077, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:31,520 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:31,520 - GitaChatbot - INFO - Performance metric - conversation_history_length: 961, Context: {"type": "formatting"}
+2024-11-05 02:36:31,524 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:37,586 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:37,588 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:37,589 - GitaChatbot - INFO - Performance metric - total_response_time: 6.073427438735962, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:37,825 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:37,826 - GitaChatbot - INFO - Performance metric - conversation_history_length: 934, Context: {"type": "formatting"}
+2024-11-05 02:36:37,828 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:41,984 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:41,986 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:41,987 - GitaChatbot - INFO - Performance metric - total_response_time: 4.1705591678619385, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:42,276 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:42,276 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1001, Context: {"type": "formatting"}
+2024-11-05 02:36:42,276 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:49,500 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:49,502 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:49,503 - GitaChatbot - INFO - Performance metric - total_response_time: 7.2330732345581055, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:49,726 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:49,727 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1007, Context: {"type": "formatting"}
+2024-11-05 02:36:49,727 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:54,318 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:54,321 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:54,322 - GitaChatbot - INFO - Performance metric - total_response_time: 4.599736452102661, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:54,596 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:54,597 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1032, Context: {"type": "formatting"}
+2024-11-05 02:36:54,597 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:36:58,695 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:36:58,697 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:36:58,698 - GitaChatbot - INFO - Performance metric - total_response_time: 4.108478307723999, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:36:58,921 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:36:58,922 - GitaChatbot - INFO - Performance metric - conversation_history_length: 955, Context: {"type": "formatting"}
+2024-11-05 02:36:58,923 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:04,761 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:04,763 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:04,764 - GitaChatbot - INFO - Performance metric - total_response_time: 5.846555233001709, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:04,978 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:04,978 - GitaChatbot - INFO - Performance metric - conversation_history_length: 948, Context: {"type": "formatting"}
+2024-11-05 02:37:04,980 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:08,969 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:08,971 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:08,971 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9970204830169678, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:09,193 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:09,194 - GitaChatbot - INFO - Performance metric - conversation_history_length: 926, Context: {"type": "formatting"}
+2024-11-05 02:37:09,197 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:13,238 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:13,240 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:13,240 - GitaChatbot - INFO - Performance metric - total_response_time: 4.051281213760376, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:13,518 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:13,521 - GitaChatbot - INFO - Performance metric - conversation_history_length: 979, Context: {"type": "formatting"}
+2024-11-05 02:37:13,523 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:19,860 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:19,862 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:19,862 - GitaChatbot - INFO - Performance metric - total_response_time: 6.348193883895874, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:20,117 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:20,117 - GitaChatbot - INFO - Performance metric - conversation_history_length: 985, Context: {"type": "formatting"}
+2024-11-05 02:37:20,117 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:24,064 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:24,067 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:24,067 - GitaChatbot - INFO - Performance metric - total_response_time: 3.953126907348633, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:24,313 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:24,314 - GitaChatbot - INFO - Performance metric - conversation_history_length: 984, Context: {"type": "formatting"}
+2024-11-05 02:37:24,315 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:28,213 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:28,215 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:28,215 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9078500270843506, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:28,447 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:28,448 - GitaChatbot - INFO - Performance metric - conversation_history_length: 985, Context: {"type": "formatting"}
+2024-11-05 02:37:28,449 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:33,775 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:33,777 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:33,777 - GitaChatbot - INFO - Performance metric - total_response_time: 5.333137512207031, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:34,036 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:34,040 - GitaChatbot - INFO - Performance metric - conversation_history_length: 988, Context: {"type": "formatting"}
+2024-11-05 02:37:34,040 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:37,310 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:37,311 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:37,312 - GitaChatbot - INFO - Performance metric - total_response_time: 3.280707836151123, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:37,565 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:37,568 - GitaChatbot - INFO - Performance metric - conversation_history_length: 975, Context: {"type": "formatting"}
+2024-11-05 02:37:37,568 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:42,777 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:42,780 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:42,781 - GitaChatbot - INFO - Performance metric - total_response_time: 5.220025539398193, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:43,081 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:43,083 - GitaChatbot - INFO - Performance metric - conversation_history_length: 973, Context: {"type": "formatting"}
+2024-11-05 02:37:43,088 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:48,283 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:48,285 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:48,286 - GitaChatbot - INFO - Performance metric - total_response_time: 5.2089104652404785, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:48,513 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:48,515 - GitaChatbot - INFO - Performance metric - conversation_history_length: 981, Context: {"type": "formatting"}
+2024-11-05 02:37:48,515 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:52,892 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:52,894 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:52,895 - GitaChatbot - INFO - Performance metric - total_response_time: 4.38634729385376, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:53,148 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:53,151 - GitaChatbot - INFO - Performance metric - conversation_history_length: 982, Context: {"type": "formatting"}
+2024-11-05 02:37:53,151 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:37:59,235 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:37:59,238 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:37:59,238 - GitaChatbot - INFO - Performance metric - total_response_time: 6.093178749084473, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:37:59,491 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:37:59,491 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1003, Context: {"type": "formatting"}
+2024-11-05 02:37:59,491 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:04,953 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:04,956 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:04,956 - GitaChatbot - INFO - Performance metric - total_response_time: 5.4681737422943115, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:05,207 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:05,208 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1009, Context: {"type": "formatting"}
+2024-11-05 02:38:05,208 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:09,242 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:09,244 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:09,244 - GitaChatbot - INFO - Performance metric - total_response_time: 4.040360450744629, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:09,492 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:09,494 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1020, Context: {"type": "formatting"}
+2024-11-05 02:38:09,494 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:13,334 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:13,338 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:13,338 - GitaChatbot - INFO - Performance metric - total_response_time: 3.8491737842559814, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:13,598 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:13,599 - GitaChatbot - INFO - Performance metric - conversation_history_length: 979, Context: {"type": "formatting"}
+2024-11-05 02:38:13,599 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:18,588 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:18,590 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:18,590 - GitaChatbot - INFO - Performance metric - total_response_time: 5.00203800201416, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:18,832 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:18,836 - GitaChatbot - INFO - Performance metric - conversation_history_length: 944, Context: {"type": "formatting"}
+2024-11-05 02:38:18,837 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:24,290 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:24,292 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:24,293 - GitaChatbot - INFO - Performance metric - total_response_time: 5.465637922286987, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:24,542 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:24,543 - GitaChatbot - INFO - Performance metric - conversation_history_length: 928, Context: {"type": "formatting"}
+2024-11-05 02:38:24,543 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:28,143 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:28,146 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:28,147 - GitaChatbot - INFO - Performance metric - total_response_time: 3.60791277885437, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:28,488 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:28,496 - GitaChatbot - INFO - Performance metric - conversation_history_length: 965, Context: {"type": "formatting"}
+2024-11-05 02:38:28,496 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:33,157 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:33,159 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:33,160 - GitaChatbot - INFO - Performance metric - total_response_time: 4.677205562591553, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:33,419 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:33,419 - GitaChatbot - INFO - Performance metric - conversation_history_length: 980, Context: {"type": "formatting"}
+2024-11-05 02:38:33,420 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:37,578 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:37,581 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:37,582 - GitaChatbot - INFO - Performance metric - total_response_time: 4.168100595474243, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:37,845 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:37,845 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1023, Context: {"type": "formatting"}
+2024-11-05 02:38:37,845 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:42,294 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:42,297 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:42,297 - GitaChatbot - INFO - Performance metric - total_response_time: 4.455205917358398, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:42,574 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:42,575 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1035, Context: {"type": "formatting"}
+2024-11-05 02:38:42,579 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:47,930 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:47,933 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:47,934 - GitaChatbot - INFO - Performance metric - total_response_time: 5.364205360412598, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:48,214 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:48,215 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1061, Context: {"type": "formatting"}
+2024-11-05 02:38:48,215 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:52,347 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:52,349 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:52,349 - GitaChatbot - INFO - Performance metric - total_response_time: 4.1436448097229, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:52,658 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:52,663 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1032, Context: {"type": "formatting"}
+2024-11-05 02:38:52,663 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:38:57,195 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:38:57,198 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:38:57,199 - GitaChatbot - INFO - Performance metric - total_response_time: 4.545377969741821, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:38:57,457 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:38:57,459 - GitaChatbot - INFO - Performance metric - conversation_history_length: 997, Context: {"type": "formatting"}
+2024-11-05 02:38:57,459 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:00,971 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:00,972 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:00,973 - GitaChatbot - INFO - Performance metric - total_response_time: 3.5242183208465576, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:01,241 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:01,242 - GitaChatbot - INFO - Performance metric - conversation_history_length: 988, Context: {"type": "formatting"}
+2024-11-05 02:39:01,242 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:05,233 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:05,236 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:05,237 - GitaChatbot - INFO - Performance metric - total_response_time: 4.000860929489136, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:05,514 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:05,516 - GitaChatbot - INFO - Performance metric - conversation_history_length: 1006, Context: {"type": "formatting"}
+2024-11-05 02:39:05,518 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:10,037 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:10,039 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:10,040 - GitaChatbot - INFO - Performance metric - total_response_time: 4.529364109039307, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:10,338 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:10,340 - GitaChatbot - INFO - Performance metric - conversation_history_length: 982, Context: {"type": "formatting"}
+2024-11-05 02:39:10,340 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:15,556 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:15,559 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:15,559 - GitaChatbot - INFO - Performance metric - total_response_time: 5.226879358291626, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:15,920 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:15,926 - GitaChatbot - INFO - Performance metric - conversation_history_length: 976, Context: {"type": "formatting"}
+2024-11-05 02:39:15,927 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:22,445 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:22,447 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:22,448 - GitaChatbot - INFO - Performance metric - total_response_time: 6.5348474979400635, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:22,799 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:22,800 - GitaChatbot - INFO - Performance metric - conversation_history_length: 960, Context: {"type": "formatting"}
+2024-11-05 02:39:22,802 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:26,484 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:26,486 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:26,486 - GitaChatbot - INFO - Performance metric - total_response_time: 3.6929590702056885, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:26,837 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:26,839 - GitaChatbot - INFO - Performance metric - conversation_history_length: 970, Context: {"type": "formatting"}
+2024-11-05 02:39:26,839 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:33,317 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:33,319 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:33,320 - GitaChatbot - INFO - Performance metric - total_response_time: 6.490828275680542, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:33,748 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:33,752 - GitaChatbot - INFO - Performance metric - conversation_history_length: 953, Context: {"type": "formatting"}
+2024-11-05 02:39:33,752 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:37,697 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:37,698 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:37,699 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9539859294891357, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:38,019 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:38,020 - GitaChatbot - INFO - Performance metric - conversation_history_length: 921, Context: {"type": "formatting"}
+2024-11-05 02:39:38,020 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:43,430 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:43,432 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:43,432 - GitaChatbot - INFO - Performance metric - total_response_time: 5.416083097457886, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:43,726 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:43,727 - GitaChatbot - INFO - Performance metric - conversation_history_length: 919, Context: {"type": "formatting"}
+2024-11-05 02:39:43,729 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:47,691 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:47,693 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:47,694 - GitaChatbot - INFO - Performance metric - total_response_time: 3.9732112884521484, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:47,951 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:47,952 - GitaChatbot - INFO - Performance metric - conversation_history_length: 943, Context: {"type": "formatting"}
+2024-11-05 02:39:47,953 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:53,815 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:53,817 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:53,818 - GitaChatbot - INFO - Performance metric - total_response_time: 5.871751070022583, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:54,138 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:54,140 - GitaChatbot - INFO - Performance metric - conversation_history_length: 943, Context: {"type": "formatting"}
+2024-11-05 02:39:54,144 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:39:59,115 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:39:59,117 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:39:59,117 - GitaChatbot - INFO - Performance metric - total_response_time: 4.984118223190308, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:39:59,428 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:39:59,429 - GitaChatbot - INFO - Performance metric - conversation_history_length: 962, Context: {"type": "formatting"}
+2024-11-05 02:39:59,429 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:03,972 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:03,974 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:03,975 - GitaChatbot - INFO - Performance metric - total_response_time: 4.551621198654175, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:04,249 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:04,249 - GitaChatbot - INFO - Performance metric - conversation_history_length: 926, Context: {"type": "formatting"}
+2024-11-05 02:40:04,249 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:11,467 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:11,469 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:11,470 - GitaChatbot - INFO - Performance metric - total_response_time: 7.224941253662109, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:11,827 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:11,832 - GitaChatbot - INFO - Performance metric - conversation_history_length: 964, Context: {"type": "formatting"}
+2024-11-05 02:40:11,832 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:16,747 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:16,750 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:16,750 - GitaChatbot - INFO - Performance metric - total_response_time: 4.928216457366943, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:17,119 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:17,124 - GitaChatbot - INFO - Performance metric - conversation_history_length: 971, Context: {"type": "formatting"}
+2024-11-05 02:40:17,128 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:21,764 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:21,766 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:21,767 - GitaChatbot - INFO - Performance metric - total_response_time: 4.653606653213501, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:22,050 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:22,053 - GitaChatbot - INFO - Performance metric - conversation_history_length: 966, Context: {"type": "formatting"}
+2024-11-05 02:40:22,055 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:26,316 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:26,318 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:26,319 - GitaChatbot - INFO - Performance metric - total_response_time: 4.272937536239624, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:26,645 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:26,646 - GitaChatbot - INFO - Performance metric - conversation_history_length: 965, Context: {"type": "formatting"}
+2024-11-05 02:40:26,647 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
+2024-11-05 02:40:30,949 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 02:40:30,951 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-05 02:40:30,951 - GitaChatbot - INFO - Performance metric - total_response_time: 4.311782360076904, Context: {"question_length": 28, "session_id": "723724393656189790"}
+2024-11-05 02:40:31,235 - GitaChatbot - INFO - New interaction - Session: -6490558209038834, Question: how can I keep my mind calm?
+2024-11-05 02:40:31,236 - GitaChatbot - INFO - Performance metric - conversation_history_length: 930, Context: {"type": "formatting"}
+2024-11-05 02:40:31,242 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
