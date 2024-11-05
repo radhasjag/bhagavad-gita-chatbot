@@ -323,3 +323,6 @@
 2024-10-31 21:23:27,598 - GitaChatbot - INFO - Performance metric - verses_found: 3, Context: {"type": "verse_processing"}
 2024-10-31 21:23:44,583 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2024-10-31 21:23:44,585 - GitaChatbot - INFO - Performance metric - cache_miss: 1, Context: {"function": "process_question"}
+2024-11-01 16:18:40,487 - GitaChatbot - INFO - Performance metric - session_cleanup: 5426.918790817261, Context: {"session_id": "1311859210667223597"}
+2024-11-01 16:18:40,490 - GitaChatbot - INFO - Performance metric - session_cleanup: 5417.925762414932, Context: {"session_id": "1301097190854552118"}
+2024-11-01 16:18:40,493 - GitaChatbot - INFO - Performance metric - session_cleanup: 5417.5784702301025, Context: {"session_id": "2109845167688444470"}

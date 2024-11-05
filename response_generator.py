@@ -1,21 +1,29 @@
 import os
 import time
 import json
-from openai import OpenAI, APIError, APIConnectionError, RateLimitError
+from openai import AzureOpenAI, APIError, APIConnectionError, RateLimitError
 import streamlit as st
 from utils.monitoring import monitor
 
 class ResponseGenerator:
     def __init__(self):
         try:
-            self.api_key = os.environ.get("OPENAI_API_KEY")
-            if not self.api_key:
-                print("Warning: OpenAI API key is missing!")
-                raise ValueError("OpenAI API key is not set in environment")
-            print("OpenAI API key is set")
-            self.client = OpenAI(api_key=self.api_key)
+            self.api_key = os.environ.get("AZURE_OPENAI_API_KEY")
+            self.endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
+            self.deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME")
+            
+            if not all([self.api_key, self.endpoint, self.deployment]):
+                print("Warning: Azure OpenAI configuration is missing!")
+                raise ValueError("Azure OpenAI configuration is not complete")
+            
+            print("Azure OpenAI configuration is set")
+            self.client = AzureOpenAI(
+                api_key=self.api_key,
+                api_version="2023-05-15",
+                azure_endpoint=self.endpoint
+            )
         except Exception as e:
-            print(f"Error initializing OpenAI client: {str(e)}")
+            print(f"Error initializing Azure OpenAI client: {str(e)}")
             self.client = None
         
     def format_conversation_history(self, conversation):
@@ -63,7 +71,7 @@ class ResponseGenerator:
             return "Error processing verses."
 
     def generate_response(self, question, relevant_verses, context, conversation=[]):
-        """Generate both concise and detailed responses in Krishna's voice using OpenAI."""
+        """Generate both concise and detailed responses in Krishna's voice using Azure OpenAI."""
         # Initialize session_id before try block
         session_id = str(hash(question))
         
@@ -72,7 +80,7 @@ class ResponseGenerator:
             monitor.log_interaction(session_id, question)
 
             if self.client is None:
-                raise ValueError("OpenAI client not properly initialized")
+                raise ValueError("Azure OpenAI client not properly initialized")
             
             if not question or not isinstance(question, str):
                 raise ValueError("Invalid question format")
@@ -111,7 +119,7 @@ Please provide both a concise answer and detailed explanation using the verses a
 
             try:
                 response = self.client.chat.completions.create(
-                    model="gpt-4",
+                    model=self.deployment,  # Using deployment name instead of model
                     messages=[
                         {"role": "system", "content": system_prompt},
                         {"role": "user", "content": user_prompt}
@@ -121,7 +129,7 @@ Please provide both a concise answer and detailed explanation using the verses a
                 )
                 
                 if not response or not response.choices:
-                    raise ValueError("Empty response from OpenAI API")
+                    raise ValueError("Empty response from Azure OpenAI API")
                 
                 response_text = response.choices[0].message.content
                 
