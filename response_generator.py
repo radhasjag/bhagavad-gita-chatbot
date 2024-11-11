@@ -44,7 +44,8 @@ class ResponseGenerator:
             self.client = AzureOpenAI(
                 api_key=self.api_key,
                 api_version="2023-05-15",
-                azure_endpoint=self.endpoint or ""
+                azure_endpoint=self.endpoint or "",
+                azure_deployment=self.deployment or ""  # Added azure_deployment parameter
             )
             self.client = wrap_openai(self.client)
             
@@ -88,7 +89,7 @@ class ResponseGenerator:
                         f"Chapter {verse['chapter']}, Verse {verse['verse_number']}:\n"
                         f"Sanskrit: {verse['verse_text']}\n"
                         f"Meaning: {verse['meaning']}\n"
-                        f"Reference: BG {verse['chapter']}.{verse['verse_number']}"
+                        f"Reference: Chapter {verse['chapter']}, Verse {verse['verse_number']}"  # Updated reference format
                     )
                     formatted_verses.append(formatted_verse)
                 except KeyError as ke:
@@ -108,13 +109,15 @@ class ResponseGenerator:
     )
     def _make_api_call(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
         """Make API call with retry logic and monitoring."""
+        if not self.client:
+            raise ValueError("Azure OpenAI client not initialized")
+            
         start_time = time.time()
         monitor.log_performance_metric("api_call_start", 1.0, 
                                      {"context": "api_request", "timestamp": start_time})
         
         try:
             response = self.client.chat.completions.create(
-                model=self.deployment or "",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
@@ -229,7 +232,8 @@ class ResponseGenerator:
             1. Always start with "Short Answer:" on its own line
             2. Always include a short answer of 2-3 sentences
             3. Always use "Detailed Explanation:" to separate sections
-            4. Never skip or omit either section
+            4. Always refer to verses as 'Chapter X, Verse Y' (not X.Y format)
+            5. Never skip or omit either section
 
             Use a tone that reflects divine knowledge, compassion, and unconditional love."""
 
