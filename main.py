@@ -274,16 +274,18 @@ def main():
         gita_processor = GitaProcessor()
         response_generator = ResponseGenerator()
 
-        st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
-
-        # Add Sanskrit toggle in sidebar
-        st.sidebar.markdown("## Display Options")
-        sanskrit_toggle = st.sidebar.toggle(
-            "Show Sanskrit Text",
-            value=st.session_state.show_sanskrit,
-            help="Toggle to show or hide Sanskrit verses in the responses"
-        )
-        
+        # Create two columns with a 3:1 ratio
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
+        with col2:
+            st.empty()  # For spacing
+            sanskrit_toggle = st.toggle(
+                "Sanskrit Text",
+                value=st.session_state.show_sanskrit,
+                help="Toggle to show or hide Sanskrit verses in the responses"
+            )
+            
         # Update session state based on toggle
         if sanskrit_toggle != st.session_state.show_sanskrit:
             st.session_state.show_sanskrit = sanskrit_toggle
