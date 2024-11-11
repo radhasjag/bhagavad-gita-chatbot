@@ -1337,3 +1337,6 @@
 2024-11-11 23:36:24,216 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
 2024-11-11 23:36:24,231 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:36:24.231696", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
 2024-11-11 23:36:24,236 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:36:24.236121", "metric": "total_response_time", "value": 34.45407700538635, "context": {"question_length": 188, "session_id": "567485990373069960"}}
+2024-11-11 23:41:01,464 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:41:01.464470", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:41:01,468 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:41:01.467950", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:41:01,470 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:41:01.470759", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}

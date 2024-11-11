@@ -44,7 +44,7 @@ class ResponseGenerator:
             self.client = AzureOpenAI(
                 api_key=self.api_key,
                 api_version="2023-05-15",
-                azure_endpoint=self.endpoint
+                azure_endpoint=self.endpoint or ""
             )
             self.client = wrap_openai(self.client)
             
@@ -52,12 +52,61 @@ class ResponseGenerator:
             monitor.log_error("system", e, {"context": "initialization"})
             self.client = None
 
+    def format_conversation_history(self, conversation: list) -> str:
+        """Format the conversation history for the prompt."""
+        try:
+            if not conversation:
+                return ""
+
+            formatted_history = "\nPrevious conversation:\n"
+            for conv in conversation[-3:]:  # Only include last 3 conversations for context
+                formatted_history += f"Seeker: {conv['question']}\n"
+                formatted_history += f"Krishna: {conv['short_answer']}\n"
+            monitor.log_performance_metric("conversation_history_length",
+                                        len(formatted_history),
+                                        {"type": "formatting"})
+            return formatted_history
+        except Exception as e:
+            monitor.log_error("system", e, {"context": "format_conversation_history"})
+            return ""
+
+    def format_verses_context(self, relevant_verses) -> str:
+        """Format the relevant verses for the prompt."""
+        try:
+            if relevant_verses is None or relevant_verses.empty:
+                monitor.log_performance_metric("verses_found", 0,
+                                            {"type": "verse_processing"})
+                return "No specific verses found for this query."
+
+            monitor.log_performance_metric("verses_found",
+                                        len(relevant_verses),
+                                        {"type": "verse_processing"})
+            formatted_verses = []
+            for _, verse in relevant_verses.iterrows():
+                try:
+                    formatted_verse = (
+                        f"Chapter {verse['chapter']}, Verse {verse['verse_number']}:\n"
+                        f"Sanskrit: {verse['verse_text']}\n"
+                        f"Meaning: {verse['meaning']}\n"
+                        f"Reference: BG {verse['chapter']}.{verse['verse_number']}"
+                    )
+                    formatted_verses.append(formatted_verse)
+                except KeyError as ke:
+                    monitor.log_error("system", ke, {"context": "verse_formatting"})
+                    continue
+
+            verses_text = "\n\n".join(formatted_verses)
+            return verses_text
+        except Exception as e:
+            monitor.log_error("system", e, {"context": "format_verses_context"})
+            return "Error processing verses."
+
     @retry(
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=4, max=10),
         retry_error_callback=lambda retry_state: None
     )
-    async def _make_api_call(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
+    def _make_api_call(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
         """Make API call with retry logic and monitoring."""
         start_time = time.time()
         monitor.log_performance_metric("api_call_start", 1.0, 
@@ -65,7 +114,7 @@ class ResponseGenerator:
         
         try:
             response = self.client.chat.completions.create(
-                model=self.deployment,
+                model=self.deployment or "",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
@@ -80,8 +129,11 @@ class ResponseGenerator:
             
             if not response or not response.choices:
                 raise ValueError("Empty response from Azure OpenAI API")
-                
-            return response
+            
+            return {
+                "content": response.choices[0].message.content,
+                "role": response.choices[0].message.role
+            }
             
         except Exception as e:
             duration = time.time() - start_time
@@ -110,12 +162,17 @@ class ResponseGenerator:
                                             {"context": "json_parsing", "status": "failed"})
                 
                 # Fallback to section splitting
+                short_answer = ""
+                detailed_explanation = ""
+                
                 if "Short Answer:" in response_text:
                     parts = response_text.split("Short Answer:")
                     if len(parts) > 1:
                         short_answer = parts[1].split("Detailed Explanation:")[0].strip()
-                        detailed_explanation = parts[1].split("Detailed Explanation:")[1].strip() \
-                            if "Detailed Explanation:" in parts[1] else parts[1]
+                        if "Detailed Explanation:" in parts[1]:
+                            detailed_explanation = parts[1].split("Detailed Explanation:")[1].strip()
+                        else:
+                            detailed_explanation = parts[1].strip()
                 else:
                     parts = response_text.split('\n\n')
                     short_answer = parts[0].strip()
@@ -143,7 +200,7 @@ class ResponseGenerator:
                 "detailed_explanation": str(e)
             }
 
-    @traceable(run_type="chain", project="bhagavad-gita-chatbot")
+    @traceable(run_type="chain", name="generate_response")
     def generate_response(self, question: str, relevant_verses: Any, 
                          context: list, conversation: list = []) -> Dict[str, str]:
         """Generate response using Azure OpenAI with comprehensive error handling and monitoring."""
@@ -188,8 +245,8 @@ class ResponseGenerator:
             Please provide both a concise answer and detailed explanation using the verses above."""
 
             try:
-                response = await self._make_api_call(system_prompt, user_prompt)
-                response_text = response.choices[0].message.content
+                response = self._make_api_call(system_prompt, user_prompt)
+                response_text = response["content"]
                 response_data = self.parse_response(response_text)
                 
                 monitor.log_response_metrics(session_id, time.time() - start_time, True)
