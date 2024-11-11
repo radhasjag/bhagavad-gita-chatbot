@@ -24,6 +24,8 @@ def initialize_session_state():
         st.session_state.question_processed = False
     if 'last_processed_question' not in st.session_state:
         st.session_state.last_processed_question = None
+    if 'show_sanskrit' not in st.session_state:
+        st.session_state.show_sanskrit = True
 
 
 @cache_response
@@ -101,9 +103,21 @@ def display_conversation_history():
                     """ % conv["short_answer"],
                                 unsafe_allow_html=True)
 
-                    with st.expander(
-                            "Click for detailed explanation with verses"):
-                        st.markdown(conv["detailed_explanation"])
+                    with st.expander("Click for detailed explanation with verses"):
+                        # Add a container for Sanskrit text that respects the toggle
+                        if st.session_state.show_sanskrit:
+                            st.markdown(conv["detailed_explanation"])
+                        else:
+                            # Remove Sanskrit text from detailed explanation
+                            explanation = conv["detailed_explanation"]
+                            lines = explanation.split('\n')
+                            filtered_lines = []
+                            for line in lines:
+                                if not line.strip().startswith('Sanskrit:'):
+                                    if 'Sanskrit:' in line:
+                                        continue
+                                    filtered_lines.append(line)
+                            st.markdown('\n'.join(filtered_lines))
 
                 # Separator
                 st.markdown("<hr style='margin: 2rem 0; opacity: 0.2;'>",
@@ -262,6 +276,19 @@ def main():
 
         st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
 
+        # Add Sanskrit toggle in sidebar
+        st.sidebar.markdown("## Display Options")
+        sanskrit_toggle = st.sidebar.toggle(
+            "Show Sanskrit Text",
+            value=st.session_state.show_sanskrit,
+            help="Toggle to show or hide Sanskrit verses in the responses"
+        )
+        
+        # Update session state based on toggle
+        if sanskrit_toggle != st.session_state.show_sanskrit:
+            st.session_state.show_sanskrit = sanskrit_toggle
+            st.experimental_rerun()
+
         # Display metrics
         display_selected_metrics()
 
@@ -293,7 +320,7 @@ def main():
         # Handle form submission
         if submit_button and user_question:
             handle_user_input(user_question, session_id, gita_processor,
-                              response_generator)
+                             response_generator)
 
             if st.session_state.question_processed:
                 st.session_state.question_processed = False

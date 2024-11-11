@@ -1448,3 +1448,7 @@
 2024-11-11 23:51:36,959 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:51:36.959025", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
 2024-11-11 23:51:36,959 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:51:36.959488", "metric": "total_response_time", "value": 6.4614551067352295, "context": {"question_length": 197, "session_id": "1588402327972386835"}}
 2024-11-11 23:51:37,195 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:51:37.195796", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:53:04,939 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:53:04.939645", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:55:05,757 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:55:05.757050", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:55:05,760 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:55:05.760857", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-11 23:55:05,762 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-11T23:55:05.762033", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
