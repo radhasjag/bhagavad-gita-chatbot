@@ -1202,3 +1202,39 @@
 2024-11-05 04:12:40,080 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
 2024-11-05 04:12:40,084 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:12:40.084812", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
 2024-11-05 04:12:40,085 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:12:40.085833", "metric": "total_response_time", "value": 3.6594254970550537, "context": {"question_length": 12, "session_id": "372835598616599336"}}
+2024-11-05 04:19:03,999 - GitaChatbot - INFO - New interaction - Session: -174419828140327882, Question: who are you?
+2024-11-05 04:19:04,000 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:19:04.000462", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:19:06,469 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:19:06,472 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:19:06.472027", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:19:06,473 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:19:06.473956", "metric": "total_response_time", "value": 2.4807369709014893, "context": {"question_length": 12, "session_id": "2305699524677049521"}}
+2024-11-05 04:21:46,219 - GitaChatbot - INFO - New interaction - Session: -8138423189654501394, Question: who am I?
+2024-11-05 04:21:46,220 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:21:46.220559", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:21:49,957 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:21:49,960 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:21:49.960211", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:21:49,961 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:21:49.961936", "metric": "total_response_time", "value": 3.7508413791656494, "context": {"question_length": 9, "session_id": "964645533243776313"}}
+2024-11-05 04:27:29,414 - GitaChatbot - INFO - New interaction - Session: -5763901404616614259, Question: why am I?
+2024-11-05 04:27:29,415 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:27:29.415314", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:27:33,196 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:27:33,201 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:27:33.201110", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:27:33,202 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:27:33.202447", "metric": "total_response_time", "value": 3.794343948364258, "context": {"question_length": 9, "session_id": "425147063331298980"}}
+2024-11-05 04:32:58,097 - GitaChatbot - INFO - New interaction - Session: 1721816216200243064, Question: who am I?
+2024-11-05 04:32:58,099 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:32:58.099788", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:33:02,733 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:33:02,735 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:33:02.735844", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:33:02,736 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:33:02.736580", "metric": "total_response_time", "value": 4.641130685806274, "context": {"question_length": 9, "session_id": "582916536556691437"}}
+2024-11-05 04:39:10,785 - GitaChatbot - INFO - New interaction - Session: 7795897092138154848, Question: why?
+2024-11-05 04:39:10,788 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:39:10.788539", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:39:15,865 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:39:15,869 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:39:15.869697", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:39:15,870 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:39:15.870549", "metric": "total_response_time", "value": 5.093743085861206, "context": {"question_length": 4, "session_id": "550103811048972646"}}
+2024-11-05 04:50:55,612 - GitaChatbot - INFO - New interaction - Session: -6427802150973998733, Question: who are you?
+2024-11-05 04:50:55,615 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:50:55.615259", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:50:59,316 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:50:59,321 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:50:59.321130", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:50:59,322 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:50:59.322448", "metric": "total_response_time", "value": 3.715149164199829, "context": {"question_length": 12, "session_id": "1681581540379304981"}}
+2024-11-05 04:51:06,346 - GitaChatbot - INFO - New interaction - Session: 139228893173547944, Question: who am I?
+2024-11-05 04:51:06,346 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:51:06.346591", "metric": "conversation_history_length", "value": 305, "context": {"type": "formatting"}}
+2024-11-05 04:51:06,347 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:51:06.347482", "metric": "verses_found", "value": 3, "context": {"type": "verse_processing"}}
+2024-11-05 04:51:09,799 - httpx - INFO - HTTP Request: POST https://ladduu-dev-openai-west-us.openai.azure.com//openai/deployments/ladduu-gpt-4o-west-us-global-standard-2024-08-06/chat/completions?api-version=2023-05-15 "HTTP/1.1 200 OK"
+2024-11-05 04:51:09,802 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:51:09.802773", "metric": "cache_miss", "value": 1, "context": {"function": "process_question"}}
+2024-11-05 04:51:09,804 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-05T04:51:09.803993", "metric": "total_response_time", "value": 3.4655885696411133, "context": {"question_length": 9, "session_id": "1681581540379304981"}}

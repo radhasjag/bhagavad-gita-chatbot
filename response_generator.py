@@ -19,6 +19,9 @@ class ResponseGenerator:
 
             # Initialize LangChain tracing
             os.environ["LANGCHAIN_TRACING_V2"] = "true"
+            os.environ["LANGSMITH_TRACING"] = "true"
+            os.environ[
+                "LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
             os.environ["LANGCHAIN_PROJECT"] = "bhagavad-gita-chatbot"
 
             if not all([self.api_key, self.endpoint, self.deployment]):

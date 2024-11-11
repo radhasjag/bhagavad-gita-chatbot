@@ -62,6 +62,54 @@ def format_metric_value(value):
     return str(value)
 
 
+def display_conversation_history():
+    """Display conversation history in chronological order"""
+    if st.session_state.conversation:
+        st.subheader("Our Conversation")
+        displayed_questions = set()
+
+        # Use the original order (not reversed)
+        for conv in st.session_state.conversation:
+            # Skip duplicates
+            if conv["question"] in displayed_questions:
+                continue
+
+            displayed_questions.add(conv["question"])
+
+            with st.container():
+                # Question container with light background
+                with st.container():
+                    st.markdown("""
+                        <div style="background-color: #f8f9fa; padding: 1rem; border-radius: 0.5rem; margin-bottom: 0.5rem;">
+                            <small style="color: #6c757d;">You asked:</small>
+                            <div style="margin-top: 0.5rem;">
+                                %s
+                            </div>
+                        </div>
+                    """ % conv["question"],
+                                unsafe_allow_html=True)
+
+                # Response container
+                with st.container():
+                    st.markdown("""
+                        <div style="margin-left: 1rem;">
+                            <strong>Krishna's Wisdom:</strong>
+                            <div style="margin-top: 0.5rem;">
+                                %s
+                            </div>
+                        </div>
+                    """ % conv["short_answer"],
+                                unsafe_allow_html=True)
+
+                    with st.expander(
+                            "Click for detailed explanation with verses"):
+                        st.markdown(conv["detailed_explanation"])
+
+                # Separator
+                st.markdown("<hr style='margin: 2rem 0; opacity: 0.2;'>",
+                            unsafe_allow_html=True)
+
+
 def handle_user_input(user_question, session_id, gita_processor,
                       response_generator):
     """Handle user input with proper error handling and state management"""
@@ -204,11 +252,8 @@ def display_selected_metrics():
 
 
 def main():
-
     try:
-        monitor.cleanup_inactive_sessions()
         initialize_session_state()
-
         session_id = init_session()
 
         # Initialize processors
@@ -217,27 +262,8 @@ def main():
 
         st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
 
-        # Display only selected metrics in sidebar
+        # Display metrics
         display_selected_metrics()
-
-        # Health Status Display
-        health_status = get_health_status()
-        st.sidebar.markdown("### System Health Status")
-        status_class = "status-healthy" if health_status[
-            "status"] == "healthy" else "status-degraded"
-        status_icon = "[OK]" if health_status["status"] == "healthy" else "[!!]"
-
-        st.sidebar.markdown(f"""
-            <div class="health-status {status_class}">
-                <div class="metric-title">
-                    {status_icon} Status: {health_status["status"].title()}
-                </div>
-            </div>
-        """,
-                            unsafe_allow_html=True)
-
-        # with st.sidebar.expander("View Health Details"):
-        #    st.json(health_status)
 
         # Add a spiritual background description
         st.markdown("""
@@ -245,7 +271,7 @@ def main():
         of the Bhagavad Gita. Ask your questions, and I shall illuminate the path.*
         """)
 
-        # Add follow-up questions explanation using Streamlit components
+        # Add dialogue feature explanation
         st.markdown("### 💫 Continuous Dialogue Feature")
         st.markdown("""
         Our conversation is a continuous journey of wisdom. You can ask follow-up questions, 
@@ -253,63 +279,7 @@ def main():
         battlefield of Kurukshetra.
         """)
 
-        # Example container with custom styling
-        st.markdown("#### Examples of Questions")
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.info("""
-            **Starting Question:**
-            "What is the main message of Bhagavad Gita?"
-
-            **Career Guidance:**
-            "Should I quit my job to pursue a startup?"
-            """)
-
-        with col2:
-            st.info("""
-            **Self-Discovery:**
-            "What is dharma and how do I follow it?"
-
-            **Follow-up:**
-            "How can I balance my responsibilities?"
-            """)
-
-        st.markdown("""
-        💡 *Each response includes both a concise answer and a detailed explanation with relevant verses. 
-        Click "detailed explanation" to see the complete response with verse references.*
-        """)
-
-        # Display conversation history with deduplication
-        if st.session_state.conversation:
-            st.subheader("Our Conversation")
-            # Use a set to track displayed questions
-            displayed_questions = set()
-
-            for conv in reversed(st.session_state.conversation):
-                # Skip if we've already displayed this question
-                if conv["question"] in displayed_questions:
-                    continue
-
-                displayed_questions.add(conv["question"])
-
-                with st.container():
-                    st.text_area(
-                        f"You asked:",
-                        conv["question"],
-                        height=50,
-                        disabled=True,
-                        key=
-                        f"q_{conv.get('id', hash(conv['question']))}"  # Use unique ID or hash
-                    )
-                    st.markdown(
-                        f"**Krishna's Wisdom:**\n{conv['short_answer']}")
-                    with st.expander(
-                            "Click for detailed explanation with verses"):
-                        st.markdown(conv['detailed_explanation'])
-                    st.markdown("---")
-
-        # User input form
+        # User input form - Place it BEFORE the conversation display
         with st.form(key='question_form', clear_on_submit=True):
             user_question = st.text_input("What wisdom do you seek?",
                                           key="user_input",
@@ -320,7 +290,7 @@ def main():
         if st.session_state.processing:
             st.info("🕉️ Krishna is contemplating your question...")
 
-        # Handle form submission with deduplication
+        # Handle form submission
         if submit_button and user_question:
             handle_user_input(user_question, session_id, gita_processor,
                               response_generator)
@@ -329,6 +299,9 @@ def main():
                 st.session_state.question_processed = False
                 time.sleep(0.1)  # Small delay to ensure state is updated
                 st.rerun()
+
+        # Display conversation history
+        display_conversation_history()
 
     except Exception as e:
         monitor.log_error("system", e, {"context": "main_function"})
