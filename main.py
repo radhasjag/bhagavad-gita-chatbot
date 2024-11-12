@@ -102,16 +102,7 @@ def display_conversation_history():
                                 unsafe_allow_html=True)
 
                     with st.expander("Click for detailed explanation with verses"):
-                        # Filter out Sanskrit text and display explanation
-                        explanation = conv["detailed_explanation"]
-                        lines = explanation.split('\n')
-                        filtered_lines = []
-                        for line in lines:
-                            if not line.strip().startswith('Sanskrit:'):
-                                if 'Sanskrit:' in line:
-                                    continue
-                                filtered_lines.append(line)
-                        st.markdown('\n'.join(filtered_lines))
+                        st.markdown(conv["detailed_explanation"])
 
                 # Separator
                 st.markdown("<hr style='margin: 2rem 0; opacity: 0.2;'>",

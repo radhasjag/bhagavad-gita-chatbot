@@ -78,7 +78,7 @@ class ResponseGenerator:
             return ""
 
     def format_verses_context(self, relevant_verses) -> str:
-        """Format the relevant verses for the prompt."""
+        """Format the relevant verses for the prompt with English text only."""
         try:
             if relevant_verses is None or relevant_verses.empty:
                 monitor.log_performance_metric("verses_found", 0,
@@ -93,7 +93,6 @@ class ResponseGenerator:
                 try:
                     formatted_verse = (
                         f"Chapter {verse['chapter']}, Verse {verse['verse_number']}:\n"
-                        f"Sanskrit: {verse['verse_text']}\n"
                         f"Meaning: {verse['meaning']}\n"
                         f"Reference: Chapter {verse['chapter']}, Verse {verse['verse_number']}"
                     )
