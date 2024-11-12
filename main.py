@@ -24,8 +24,6 @@ def initialize_session_state():
         st.session_state.question_processed = False
     if 'last_processed_question' not in st.session_state:
         st.session_state.last_processed_question = None
-    if 'show_sanskrit' not in st.session_state:
-        st.session_state.show_sanskrit = False  # Changed default to False
 
 
 @cache_response
@@ -104,20 +102,16 @@ def display_conversation_history():
                                 unsafe_allow_html=True)
 
                     with st.expander("Click for detailed explanation with verses"):
-                        # Add a container for Sanskrit text that respects the toggle
-                        if st.session_state.show_sanskrit:
-                            st.markdown(conv["detailed_explanation"])
-                        else:
-                            # Remove Sanskrit text from detailed explanation
-                            explanation = conv["detailed_explanation"]
-                            lines = explanation.split('\n')
-                            filtered_lines = []
-                            for line in lines:
-                                if not line.strip().startswith('Sanskrit:'):
-                                    if 'Sanskrit:' in line:
-                                        continue
-                                    filtered_lines.append(line)
-                            st.markdown('\n'.join(filtered_lines))
+                        # Filter out Sanskrit text and display explanation
+                        explanation = conv["detailed_explanation"]
+                        lines = explanation.split('\n')
+                        filtered_lines = []
+                        for line in lines:
+                            if not line.strip().startswith('Sanskrit:'):
+                                if 'Sanskrit:' in line:
+                                    continue
+                                filtered_lines.append(line)
+                        st.markdown('\n'.join(filtered_lines))
 
                 # Separator
                 st.markdown("<hr style='margin: 2rem 0; opacity: 0.2;'>",
@@ -149,11 +143,11 @@ def handle_user_input(user_question, session_id, gita_processor,
         try:
             # Your response generation code here
             response_data = process_question(user_question, gita_processor,
-                                              response_generator,
-                                              st.session_state.context,
-                                              st.session_state.conversation)
+                                           response_generator,
+                                           st.session_state.context,
+                                           st.session_state.conversation)
             monitor.log_response_metrics(session_id,
-                                          time.time() - start_time, True)
+                                       time.time() - start_time, True)
 
             # Update conversation with new Q&A
             st.session_state.last_processed_question = user_question
@@ -169,8 +163,8 @@ def handle_user_input(user_question, session_id, gita_processor,
             })
         except Exception as e:
             monitor.log_response_metrics(session_id,
-                                          time.time() - start_time, False,
-                                          str(e))
+                                       time.time() - start_time, False,
+                                       str(e))
 
         # Log success metrics
         response_time = time.time() - start_time
@@ -274,22 +268,7 @@ def main():
         gita_processor = GitaProcessor()
         response_generator = ResponseGenerator()
 
-        # Create two columns with a 3:1 ratio
-        col1, col2 = st.columns([3, 1])
-        with col1:
-            st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
-        with col2:
-            st.empty()  # For spacing
-            sanskrit_toggle = st.toggle(
-                "Sanskrit Text",
-                value=st.session_state.show_sanskrit,
-                help="Toggle to show or hide Sanskrit verses in the responses"
-            )
-            
-        # Update session state based on toggle
-        if sanskrit_toggle != st.session_state.show_sanskrit:
-            st.session_state.show_sanskrit = sanskrit_toggle
-            st.experimental_rerun()
+        st.title("🕉️ Bhagavad Gita Wisdom with Sri Krishna")
 
         # Display metrics
         display_selected_metrics()
@@ -311,9 +290,9 @@ def main():
         # User input form - Place it BEFORE the conversation display
         with st.form(key='question_form', clear_on_submit=True):
             user_question = st.text_input("What wisdom do you seek?",
-                                          key="user_input",
-                                          disabled=st.session_state.processing,
-                                          max_chars=MAX_QUESTION_LENGTH)
+                                       key="user_input",
+                                       disabled=st.session_state.processing,
+                                       max_chars=MAX_QUESTION_LENGTH)
             submit_button = st.form_submit_button("Ask Krishna")
 
         if st.session_state.processing:
