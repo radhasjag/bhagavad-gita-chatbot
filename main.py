@@ -25,7 +25,7 @@ def initialize_session_state():
     if 'last_processed_question' not in st.session_state:
         st.session_state.last_processed_question = None
     if 'show_sanskrit' not in st.session_state:
-        st.session_state.show_sanskrit = True
+        st.session_state.show_sanskrit = False  # Changed default to False
 
 
 @cache_response
@@ -149,11 +149,11 @@ def handle_user_input(user_question, session_id, gita_processor,
         try:
             # Your response generation code here
             response_data = process_question(user_question, gita_processor,
-                                             response_generator,
-                                             st.session_state.context,
-                                             st.session_state.conversation)
+                                              response_generator,
+                                              st.session_state.context,
+                                              st.session_state.conversation)
             monitor.log_response_metrics(session_id,
-                                         time.time() - start_time, True)
+                                          time.time() - start_time, True)
 
             # Update conversation with new Q&A
             st.session_state.last_processed_question = user_question
@@ -169,8 +169,8 @@ def handle_user_input(user_question, session_id, gita_processor,
             })
         except Exception as e:
             monitor.log_response_metrics(session_id,
-                                         time.time() - start_time, False,
-                                         str(e))
+                                          time.time() - start_time, False,
+                                          str(e))
 
         # Log success metrics
         response_time = time.time() - start_time
