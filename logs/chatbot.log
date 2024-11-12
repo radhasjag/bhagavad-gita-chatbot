@@ -1567,3 +1567,4 @@
 2024-11-12 00:09:38,030 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-12T00:09:38.030138", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
 2024-11-12 00:10:15,187 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-12T00:10:15.187051", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
 2024-11-12 00:10:55,096 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-12T00:10:55.096479", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
+2024-11-12 00:11:06,729 - GitaChatbot - INFO - Performance metric: {"timestamp": "2024-11-12T00:11:06.729554", "metric": "initialization", "value": 1.0, "context": {"context": "azure_openai_setup", "status": "success"}}
