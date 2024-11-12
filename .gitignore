@@ -50,3 +50,4 @@ nltk_data/
 # Local development
 *.swp
 .DS_Store
+logs/*.log
