@@ -817,7 +817,7 @@ def main():
                 navigate life's difficult decisions through the lens of Dharma - your sacred duty
                 aligned with your true nature.
             </div>
-            <div class="welcome-quote">
+            <div class="welcome-quote" style="color: #ff6b35;">
                 "Karmanye vadhikaraste ma phaleshu kadachana"<br/>
                 You have the right to work, but never to its fruits.
             </div>
