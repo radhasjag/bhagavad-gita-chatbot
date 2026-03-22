@@ -5,8 +5,6 @@ import logging
 from typing import Dict, Any, Optional
 from tenacity import retry, stop_after_attempt, wait_exponential
 from openai import AzureOpenAI, APIError, APIConnectionError, RateLimitError
-from langsmith.wrappers import wrap_openai
-from langsmith import traceable
 import streamlit as st
 from utils.monitoring import monitor
 
@@ -17,19 +15,6 @@ class ResponseGenerator:
             self.api_key = os.environ.get("AZURE_OPENAI_API_KEY")
             self.endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
             self.deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME")
-
-            # Initialize LangChain tracing with error handling
-            try:
-                os.environ["LANGCHAIN_TRACING_V2"] = "true"
-                os.environ["LANGSMITH_TRACING"] = "true"
-                os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
-                os.environ["LANGCHAIN_PROJECT"] = "bhagavad-gita-chatbot"
-                
-                if "LANGSMITH_API_KEY" not in os.environ:
-                    monitor.log_error("system", ValueError("LANGSMITH_API_KEY not found"), 
-                                    {"context": "langchain_initialization"})
-            except Exception as e:
-                monitor.log_error("system", e, {"context": "langchain_initialization"})
 
             if not all([self.api_key, self.endpoint, self.deployment]):
                 missing_configs = [
@@ -53,7 +38,6 @@ class ResponseGenerator:
                 api_version="2023-05-15",
                 azure_endpoint=self.endpoint
             )
-            self.client = wrap_openai(self.client)
             
         except Exception as e:
             monitor.log_error("system", e, {"context": "initialization"})
@@ -148,7 +132,7 @@ class ResponseGenerator:
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.7,
-                max_tokens=1000
+                max_completion_tokens=1000
             )
             
             duration = time.time() - start_time
@@ -228,23 +212,37 @@ class ResponseGenerator:
                 "detailed_explanation": str(e)
             }
 
-    @traceable(run_type="chain", name="generate_response")
-    def generate_response(self, question: str, relevant_verses: Any, 
-                         context: list, conversation: list = []) -> Dict[str, str]:
-        """Generate response using Azure OpenAI with comprehensive error handling and monitoring."""
+    def generate_response(self, question: str, relevant_verses: Any,
+                         context: list, conversation: list = [],
+                         language: str = "English") -> Dict[str, str]:
+        """Generate response using Azure OpenAI with multilingual support."""
         session_id = str(hash(question))
         start_time = time.time()
-        
+
+        # Language-specific instructions
+        lang_instructions = {
+            "English": "Respond entirely in English.",
+            "हिंदी (Hindi)": "Respond entirely in Hindi (हिंदी). Use Devanagari script.",
+            "తెలుగు (Telugu)": "Respond entirely in Telugu (తెలుగు). Use Telugu script.",
+            "தமிழ் (Tamil)": "Respond entirely in Tamil (தமிழ்). Use Tamil script.",
+            "संस्कृत (Sanskrit)": "Respond entirely in Sanskrit (संस्कृतम्). Use Devanagari script.",
+        }
+
+        lang_instruction = lang_instructions.get(language, "Respond in English.")
+
         try:
             monitor.log_interaction(session_id, question)
-            
+
             if self.client is None:
                 raise ValueError("Azure OpenAI not properly initialized")
 
             if not question or not isinstance(question, str):
                 raise ValueError("Invalid question format")
 
-            system_prompt = """You are Lord Krishna speaking to a seeker of wisdom through the teachings of Bhagavad Gita. 
+            system_prompt = f"""You are Lord Krishna speaking to a seeker of wisdom through the teachings of Bhagavad Gita.
+
+            IMPORTANT LANGUAGE INSTRUCTION: {lang_instruction}
+
             Your response must ALWAYS follow this exact format:
 
             Short Answer:
@@ -254,11 +252,12 @@ class ResponseGenerator:
             [Elaborate explanation with verse references and practical applications]
 
             Important formatting rules:
-            1. Always start with "Short Answer:" on its own line
+            1. Always start with "Short Answer:" on its own line (keep this label in English)
             2. Always include a short answer of 2-3 sentences
-            3. Always use "Detailed Explanation:" to separate sections
+            3. Always use "Detailed Explanation:" to separate sections (keep this label in English)
             4. Always refer to verses as 'Chapter X, Verse Y' (not X.Y format)
             5. Never skip or omit either section
+            6. The content of your answer must be in the specified language
 
             Use a tone that reflects divine knowledge, compassion, and unconditional love."""
 
