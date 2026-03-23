@@ -5,6 +5,7 @@ import logging
 from typing import Dict, Any, Optional
 from tenacity import retry, stop_after_attempt, wait_exponential
 from openai import AzureOpenAI, APIError, APIConnectionError, RateLimitError
+import requests
 import streamlit as st
 from utils.monitoring import monitor
 
@@ -15,6 +16,7 @@ class ResponseGenerator:
             self.api_key = os.environ.get("AZURE_OPENAI_API_KEY")
             self.endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT")
             self.deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME")
+            self.api_version = os.environ.get("AZURE_OPENAI_API_VERSION", "2023-05-15")
 
             if not all([self.api_key, self.endpoint, self.deployment]):
                 missing_configs = [
@@ -35,7 +37,7 @@ class ResponseGenerator:
             # Initialize Azure OpenAI client
             self.client = AzureOpenAI(
                 api_key=self.api_key,
-                api_version="2023-05-15",
+                api_version=self.api_version,
                 azure_endpoint=self.endpoint
             )
             
@@ -94,7 +96,7 @@ class ResponseGenerator:
     @retry(
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=4, max=10),
-        retry_error_callback=lambda retry_state: None
+        reraise=True
     )
     def _make_api_call(self, system_prompt: str, user_prompt: str) -> Dict[str, Any]:
         """Make API call with retry logic and monitoring."""
@@ -125,26 +127,38 @@ class ResponseGenerator:
                     missing.append("user_prompt")
                 raise ValueError(f"Missing required parameters: {', '.join(missing)}")
 
-            response = self.client.chat.completions.create(
-                model=self.deployment,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=0.7,
-                max_completion_tokens=1000
+            response = requests.post(
+                f"{self.endpoint.rstrip('/')}/openai/deployments/{self.deployment}/chat/completions",
+                params={"api-version": self.api_version},
+                headers={
+                    "api-key": self.api_key,
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    "temperature": 0.7,
+                    "max_completion_tokens": 1000,
+                },
+                timeout=60,
             )
             
             duration = time.time() - start_time
+            response.raise_for_status()
+            response_data = response.json()
             monitor.log_performance_metric("api_call_duration", duration, 
                                         {"context": "api_request", "status": "success"})
             
-            if not response or not response.choices:
+            choices = response_data.get("choices") or []
+            if not choices:
                 raise ValueError("Empty response from Azure OpenAI API")
-            
+
+            message = choices[0].get("message") or {}
             return {
-                "content": response.choices[0].message.content,
-                "role": response.choices[0].message.role
+                "content": message.get("content", ""),
+                "role": message.get("role", "assistant")
             }
             
         except Exception as e:
@@ -274,6 +288,8 @@ class ResponseGenerator:
 
             try:
                 response = self._make_api_call(system_prompt, user_prompt)
+                if not response:
+                    raise ValueError("Azure OpenAI API returned no response")
                 response_text = response["content"]
                 response_data = self.parse_response(response_text)
                 

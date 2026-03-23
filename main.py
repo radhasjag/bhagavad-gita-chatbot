@@ -515,17 +515,24 @@ def inject_voice_script():
     """Inject JavaScript for speech recognition"""
     st.markdown("""
     <script>
-    let recognition = null;
-    let isListening = false;
+    const voiceState = window.crossroadsVoiceState || {
+        recognition: null,
+        isListening: false,
+        micClickBound: false
+    };
+    window.crossroadsVoiceState = voiceState;
 
     function initSpeechRecognition() {
+        if (voiceState.recognition) {
+            return;
+        }
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-            recognition = new SpeechRecognition();
-            recognition.continuous = false;
-            recognition.interimResults = false;
+            voiceState.recognition = new SpeechRecognition();
+            voiceState.recognition.continuous = false;
+            voiceState.recognition.interimResults = false;
 
-            recognition.onresult = function(event) {
+            voiceState.recognition.onresult = function(event) {
                 const transcript = event.results[0][0].transcript;
                 const inputField = document.querySelector('input[data-testid="stTextInput"]') ||
                                    document.querySelector('.stTextInput input');
@@ -536,50 +543,74 @@ def inject_voice_script():
                 stopListening();
             };
 
-            recognition.onerror = function(event) {
+            voiceState.recognition.onerror = function(event) {
                 stopListening();
             };
 
-            recognition.onend = function() {
+            voiceState.recognition.onend = function() {
                 stopListening();
             };
         }
     }
 
+    function bindMicButton() {
+        if (voiceState.micClickBound) {
+            return;
+        }
+
+        document.addEventListener('click', function(event) {
+            const micButton = event.target.closest('#micButton');
+            if (!micButton) {
+                return;
+            }
+
+            event.preventDefault();
+            toggleListening(micButton.dataset.langCode || 'en-US');
+        });
+
+        voiceState.micClickBound = true;
+    }
+
     function startListening(langCode) {
-        if (!recognition) initSpeechRecognition();
-        if (recognition && !isListening) {
-            recognition.lang = langCode || 'en-US';
-            isListening = true;
+        if (!voiceState.recognition) initSpeechRecognition();
+        if (voiceState.recognition && !voiceState.isListening) {
+            voiceState.recognition.lang = langCode || 'en-US';
+            voiceState.isListening = true;
             const btn = document.getElementById('micButton');
             if (btn) {
                 btn.style.background = 'linear-gradient(135deg, #c94a4a, #8b0000)';
             }
-            recognition.start();
+            voiceState.recognition.start();
         }
     }
 
     function stopListening() {
-        isListening = false;
+        voiceState.isListening = false;
         const btn = document.getElementById('micButton');
         if (btn) {
             btn.style.background = 'linear-gradient(135deg, #d4a853, #b8860b)';
         }
-        if (recognition) {
-            try { recognition.stop(); } catch(e) {}
+        if (voiceState.recognition) {
+            try { voiceState.recognition.stop(); } catch(e) {}
         }
     }
 
     function toggleListening(langCode) {
-        if (isListening) {
+        if (voiceState.isListening) {
             stopListening();
         } else {
             startListening(langCode);
         }
     }
 
-    document.addEventListener('DOMContentLoaded', initSpeechRecognition);
-    if (document.readyState === 'complete') initSpeechRecognition();
+    document.addEventListener('DOMContentLoaded', function() {
+        initSpeechRecognition();
+        bindMicButton();
+    });
+    if (document.readyState !== 'loading') {
+        initSpeechRecognition();
+        bindMicButton();
+    }
     </script>
     """, unsafe_allow_html=True)
 
@@ -817,7 +848,7 @@ def main():
                 navigate life's difficult decisions through the lens of Dharma - your sacred duty
                 aligned with your true nature.
             </div>
-            <div class="welcome-quote" style="color: #ff6b35;">
+            <div class="welcome-quote">
                 "Karmanye vadhikaraste ma phaleshu kadachana"<br/>
                 You have the right to work, but never to its fruits.
             </div>
@@ -843,7 +874,7 @@ def main():
 
         st.markdown(f"""
         <div class="mic-container">
-            <button id="micButton" class="mic-button" onclick="toggleListening('{current_lang_code}')">
+            <button id="micButton" class="mic-button" data-lang-code="{current_lang_code}">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/>
                 </svg>
