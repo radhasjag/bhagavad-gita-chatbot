@@ -1,0 +1,15 @@
+.git
+.gitignore
+.claude
+.env
+.env.prod
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+logs
+Screenshot *.png
+Bhagavad-Gita As It Is without pic.docx
+Bhagavad-Gita As It Is.docx
+Bhagavad-Gita As It Is.pdf
