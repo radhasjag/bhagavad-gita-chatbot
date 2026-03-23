@@ -52,3 +52,4 @@ nltk_data/
 *.swp
 .DS_Store
 logs/*.log
+Screenshot *.png
