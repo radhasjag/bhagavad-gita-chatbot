@@ -270,12 +270,13 @@ def inject_devotional_css():
     }
 
     .counter-number {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        font-size: 4rem;
+        font-weight: 300;
         color: #ff6b35;
-        text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        text-shadow: 0 0 30px rgba(255, 107, 53, 0.4);
         display: block;
+        letter-spacing: 4px;
     }
 
     .counter-label {
@@ -593,7 +594,7 @@ def inject_devotional_css():
         }
 
         .counter-number {
-            font-size: 2rem;
+            font-size: 3rem;
         }
 
         .counter-label {
@@ -680,11 +681,11 @@ def inject_devotional_css():
         }
 
         .counter-number {
-            font-size: 1.6rem;
+            font-size: 2.2rem;
         }
 
         .counter-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         .tagline {
@@ -1052,13 +1053,39 @@ def main():
         </div>
         """, unsafe_allow_html=True)
 
-        # Display query counter
+        # Display query counter with counting animation
         query_count = get_query_count()
         st.markdown(f"""
         <div class="counter-section">
-            <span class="counter-number">{query_count:,}</span>
+            <span class="counter-number" id="queryCounter" data-target="{query_count}">0</span>
             <span class="counter-label">life decisions made easier</span>
         </div>
+        <script>
+        (function() {{
+            const counter = document.getElementById('queryCounter');
+            if (!counter || counter.dataset.animated === 'true') return;
+
+            const target = parseInt(counter.dataset.target);
+            const duration = 2000;
+            const startValue = Math.max(0, target - 500);
+            const increment = (target - startValue) / (duration / 16);
+            let current = startValue;
+
+            counter.dataset.animated = 'true';
+
+            function updateCounter() {{
+                current += increment;
+                if (current < target) {{
+                    counter.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                }} else {{
+                    counter.textContent = target.toLocaleString();
+                }}
+            }}
+
+            setTimeout(updateCounter, 500);
+        }})();
+        </script>
         """, unsafe_allow_html=True)
 
         # Language selector
