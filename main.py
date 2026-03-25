@@ -5,6 +5,40 @@ from utils.monitoring import monitor
 from utils.production_utils import init_session, rate_limiter, cache_response
 import time
 import base64
+import json
+import os
+
+# Counter file path
+COUNTER_FILE = "query_counter.json"
+BASE_COUNT = 6129  # Manual count before automatic tracking
+
+
+def get_query_count():
+    """Get the current query count"""
+    try:
+        if os.path.exists(COUNTER_FILE):
+            with open(COUNTER_FILE, "r") as f:
+                data = json.load(f)
+                return data.get("count", 0) + BASE_COUNT
+        return BASE_COUNT
+    except Exception:
+        return BASE_COUNT
+
+
+def increment_query_count():
+    """Increment the query count"""
+    try:
+        count = 0
+        if os.path.exists(COUNTER_FILE):
+            with open(COUNTER_FILE, "r") as f:
+                data = json.load(f)
+                count = data.get("count", 0)
+        count += 1
+        with open(COUNTER_FILE, "w") as f:
+            json.dump({"count": count}, f)
+        return count + BASE_COUNT
+    except Exception:
+        return BASE_COUNT
 
 
 def get_base64_image(image_path):
@@ -226,6 +260,30 @@ def inject_devotional_css():
         margin-top: 1.5rem;
         padding-top: 1rem;
         border-top: 1px solid rgba(212, 168, 83, 0.2);
+    }
+
+    /* Query counter */
+    .counter-section {
+        text-align: center;
+        margin: 1.5rem auto;
+        padding: 1rem;
+    }
+
+    .counter-number {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ff6b35;
+        text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        display: block;
+    }
+
+    .counter-label {
+        font-family: 'Lora', serif;
+        font-size: 0.9rem;
+        color: #b89d6a;
+        font-style: italic;
+        letter-spacing: 1px;
     }
 
     /* Crossroads visual */
@@ -534,6 +592,14 @@ def inject_devotional_css():
             font-size: 0.85rem;
         }
 
+        .counter-number {
+            font-size: 2rem;
+        }
+
+        .counter-label {
+            font-size: 0.8rem;
+        }
+
         .tagline {
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -611,6 +677,14 @@ def inject_devotional_css():
 
         .welcome-text {
             font-size: 0.9rem;
+        }
+
+        .counter-number {
+            font-size: 1.6rem;
+        }
+
+        .counter-label {
+            font-size: 0.75rem;
         }
 
         .tagline {
@@ -877,6 +951,8 @@ def handle_user_input(user_question, session_id, gita_processor,
                 "detailed_explanation": response_data["detailed_explanation"],
                 "id": len(st.session_state.conversation)
             })
+            # Increment the global query counter
+            increment_query_count()
         except Exception as e:
             monitor.log_response_metrics(session_id,
                                        time.time() - start_time, False,
@@ -973,6 +1049,15 @@ def main():
                 "Karmanye vadhikaraste ma phaleshu kadachana"<br/>
                 You have the right to work, but never to its fruits.
             </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Display query counter
+        query_count = get_query_count()
+        st.markdown(f"""
+        <div class="counter-section">
+            <span class="counter-number">{query_count:,}</span>
+            <span class="counter-label">life decisions made easier</span>
         </div>
         """, unsafe_allow_html=True)
 
