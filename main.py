@@ -500,6 +500,127 @@ def inject_devotional_css():
         background: rgba(212, 168, 83, 0.1);
         border-color: #d4a853;
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+        .title-container {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+
+        .title-divider {
+            font-size: 3rem;
+        }
+
+        .main .block-container {
+            padding: 0.5rem 1rem;
+        }
+
+        .welcome-section {
+            padding: 1.25rem;
+            margin: 1rem auto;
+        }
+
+        .welcome-title {
+            font-size: 1.3rem;
+        }
+
+        .welcome-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .welcome-quote {
+            font-size: 0.85rem;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .stTextInput > div > div > input {
+            font-size: 1rem !important;
+            padding: 0.75rem !important;
+        }
+
+        .stButton > button {
+            width: 100% !important;
+            padding: 0.75rem 1.5rem !important;
+            font-size: 1rem !important;
+        }
+
+        .mic-button {
+            width: 50px;
+            height: 50px;
+        }
+
+        .mic-label {
+            font-size: 0.75rem;
+        }
+
+        .question-box, .answer-box {
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .answer-box {
+            margin-left: 0.5rem;
+        }
+
+        .question-text, .answer-text {
+            font-size: 0.95rem;
+        }
+
+        h2, h3 {
+            font-size: 1.3rem !important;
+        }
+
+        .hero-image {
+            max-width: 100%;
+        }
+
+        .sacred-divider {
+            margin: 1.5rem 0;
+            letter-spacing: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .title-container {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .title-divider {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .title-cross, .title-roads {
+            transform: none;
+        }
+
+        .welcome-section {
+            padding: 1rem;
+        }
+
+        .welcome-title {
+            font-size: 1.1rem;
+        }
+
+        .welcome-text {
+            font-size: 0.9rem;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+        }
+
+        .stForm {
+            padding: 1rem;
+        }
+    }
     """
 
     # Combine all CSS parts
